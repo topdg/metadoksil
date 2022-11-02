@@ -1,0 +1,102 @@
+@import '/src/assets/sass/vars.scss';
+
+.section-2{
+
+  &__items{
+    display: flex;
+    flex-direction: row;
+
+    @media (max-width: $sm) {
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: $xs) {
+      flex-direction: column;
+      row-gap: 20px;
+    }
+  }
+
+  &__item{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    width: 25%;
+    padding: 0 15px;
+
+    @media (max-width: $sm) {
+      width: 50%;
+    }
+
+    @media (max-width: $xs) {
+      width: 100%;
+      flex-direction: row;
+      min-height: 50px;
+    }
+
+    &::before{
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      height: calc(100% - 50px);
+      width: 2px;
+      transform: translate(50%, -50%);
+      background: $grey;
+
+      @media (max-width: $xs) {
+        display: none;
+      }
+    }
+
+    &:nth-child(2n) {
+      @media (max-width: $sm) {
+        &::before{
+          display: none;
+        }
+      }
+    }
+
+    &:last-child{
+      &::before{
+        display: none;
+      }
+    }
+
+    &_title{
+      text-align: center;
+      max-width: 264px;
+
+      @media (max-width: $xs) {
+        width: 100%;
+        text-align: left;
+        padding-left: 60px;
+        max-width: 300px;
+      }
+    }
+
+    &_picture{
+      width: 100px;
+      height: 100px;
+
+      @media (max-width: $md) {
+        width: 80px;
+        height: 80px;
+      }
+
+      @media (max-width: $xs) {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    &_img{
+      width: 100%;
+    }
+  }
+}

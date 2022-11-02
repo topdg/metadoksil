@@ -1,0 +1,77 @@
+@import "/src/assets/sass/vars.scss";
+
+.faq{
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+
+    @media (max-width: $xlg) {
+      row-gap: 50px;
+    }
+
+    @media (max-width: $md) {
+      row-gap: 40px;
+    }
+  }
+
+  &__item{
+    padding: 20px;
+    border-bottom: 1px solid $blue;
+
+    &-active{
+      & .faq__answer{
+        display: block;
+      }
+      & .faq__button{
+        &::before{
+          transform: translate(-50%, -50%) rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &__question{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: 1.25em;
+    font-weight: 600;
+  }
+
+  &__answer{
+    display: none;
+    padding-top: 10px;
+  }
+
+  &__button{
+    position: relative;
+    width: 2.2rem;
+    height: 2.2em;
+    font-size: 20px;
+
+    &::before{
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      width: 1.2em;
+      height: 1.2em;
+      background: url(../../assets/images/chevron-up.svg);
+      background-size: contain;
+      transition: .3s transform ease;
+    }
+
+    @media (max-width: $xlg) {
+      font-size: 18px;
+    }
+
+    @media (max-width: $md) {
+      font-size: 16px;
+    }
+  }
+}

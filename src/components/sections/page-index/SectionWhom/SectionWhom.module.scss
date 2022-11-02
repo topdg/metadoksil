@@ -1,0 +1,50 @@
+@import "../../../../assets/sass/vars.scss";
+
+.sectionWhom {
+  &__items{
+    display: flex;
+    flex-direction: row;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  &__item{
+    width: 50%;
+
+    &-grey{
+      background: $grey;
+
+      & .sectionWhom__item_title{
+        color: #fff;
+      }
+    }
+
+    &_head{
+      padding: 70px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &_title{
+      font-weight: 500;
+      color: $grey;
+    }
+
+    &_picture{
+      position: relative;
+      height: 440px;
+      overflow: hidden;
+    }
+
+    &_img{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      min-height: 100%;
+      min-width: 100%;
+    }
+  }
+}

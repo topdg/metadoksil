@@ -1,0 +1,91 @@
+@import '/src/assets/sass/vars.scss';
+
+.footer{
+
+  &__main{
+    padding: 80px 0;
+    background: $black;
+    color: #fff;
+    font-size: 16px;
+
+    @media (max-width: $lg) {
+      font-size: 14px;
+      padding: 70px 0;
+    }
+
+    @media (max-width: $md) {
+      padding: 60px 0;
+    }
+  }
+
+  &__title{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.75;
+
+    @media (max-width: $lg) {
+      font-size: 18px;
+    }
+  }
+
+  &__row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+
+    @media (max-width: $md) {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &__col{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @media (max-width: $md) {
+      gap: 15px;
+    }
+  }
+
+  &__items{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-left: 0;
+
+    @media (max-width: $md) {
+      gap: 8px;
+    }
+  }
+
+  &__item{
+    list-style: none;
+  }
+
+  &__link{
+    color: #fff;
+
+    &:hover{
+      color: $blue;
+    }
+  }
+
+  &__bottom{
+    background: #fff;
+    padding: 10px;
+
+    &_content{
+      text-align: center;
+    }
+    
+    &_link{
+      color: $blue;
+      font-weight: 700;
+      font-size: 18px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.title{
+  font-family: 'Source Sans Pro', sans-serif, Arial;
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 57px;
+  color: $black;
+
+  &-blue{
+    color: $blue;
+  }
+
+  &-white{
+    color: #fff;
+  }
+}

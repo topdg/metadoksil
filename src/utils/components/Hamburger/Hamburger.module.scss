@@ -1,0 +1,53 @@
+@import "/src/assets/sass/vars.scss";
+
+.hamburger{
+  position: fixed;
+  top: 34px;
+  right: 70px;
+  width: 30px;
+  height: 24px;
+  z-index: 1002;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: $md) {
+    top: 20px;
+    right: 20px;
+  }
+
+  &-active.hamburger{
+    
+    &::before,
+    &::after,
+    & .hamburger__line{
+      background: $black;
+    }
+
+  }
+
+  &::before,
+  &::after{
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+
+  &::before,
+  &::after,
+  &__line{
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: $grey;
+  }
+
+  &::before{
+    top: 0;
+  }
+
+  &::after{
+    bottom: 0;
+  }
+}

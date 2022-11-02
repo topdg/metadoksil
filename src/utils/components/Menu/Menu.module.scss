@@ -1,0 +1,86 @@
+@import "/src/assets/sass/vars.scss";
+
+.menu{
+  position: fixed;
+  background: #fff;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 430px;
+  z-index: 1001;
+  padding: 76px 32px 32px 32px;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform .4s ease;
+
+  @media (max-width: $md) {
+    padding: 76px 20px 20px 20px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  &-active{
+    transform: translateX(0);
+  }
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+    row-gap: 40px;
+    
+    @media (max-width: $xlg) {
+      row-gap: 30px;
+    }
+    
+    @media (max-width: $md) {
+      row-gap: 20px;
+    }
+  }
+
+  &__group{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    @media (max-width: $md) {
+      row-gap: 10px;
+    }
+
+    &_title{
+      font-weight: 500;
+      color: $black;
+    }
+
+    &_list{
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+      padding-left: 0;
+      margin: 0;
+
+      @media (max-width: $xlg) {
+        row-gap: 12px;
+      }
+
+      @media (max-width: $md) {
+        row-gap: 8px;
+      }
+    }
+
+    &_item{
+      list-style: none;
+    }
+
+    &_link{
+      font-size: 16px;
+      color: $black;
+
+      &:hover{
+        color: $blue;
+      }
+    }
+  }
+}
