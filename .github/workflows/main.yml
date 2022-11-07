@@ -10,9 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      
+      - run: echo "API_HOST=${{ secrets.METADOXIL_API_HOST }}" >> .env
+      
       - uses: enriikke/gatsby-gh-pages-action@v2
-        env:
-          API_HOST: ${{ secrets.METADOXIL_API_HOST }}
         with:
           access-token: ${{ secrets.ACCESS_TOKEN }}
           deploy-branch: gh-pages
