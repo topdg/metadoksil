@@ -1,6 +1,8 @@
 import type { GatsbyConfig } from "gatsby";
 import * as dotenv from 'dotenv'
 
+console.log(dotenv.config());
+
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Метадоксил`,
