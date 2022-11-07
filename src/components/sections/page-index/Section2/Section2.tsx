@@ -8,6 +8,7 @@ import * as styles from './Section2.module.scss'
 
 export const Section2 : FC<Section2Props> = ( { items } ) => {
 
+  console.log(items);
   return (
     <Section>
       <Container>
@@ -16,9 +17,9 @@ export const Section2 : FC<Section2Props> = ( { items } ) => {
             items.map(el => 
               <div className={ styles.section2__item }>
                 {
-                  el.icon?.sourceUrl &&
-                  <div className={ styles.section2__item_picture }>
-                    <StaticImage src={ el.icon?.sourceUrl } className={ styles.section2__item_img } alt={ el.title } />
+                  el.icon?.localFile?.fields?.staticPath &&
+                  <div className={ styles.section2__item_picture } >
+                    <img src={ el.icon?.localFile?.fields?.staticPath } className={ styles.section2__item_img } alt={ el.title } />
                   </div>
                 }
                 <span>{ el.icon.sourceUrl }</span>

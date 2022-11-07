@@ -1,0 +1,39 @@
+.buttonLink{
+  text-decoration: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .4s ease;
+  padding: 20px 40px;
+  text-align: center;
+  font-weight: 500;
+  
+  @media (max-width: $lg) {
+    padding: 16px 32px;
+  }
+  
+  @media (max-width: $md) {
+    padding: 10px 20px;
+  }
+
+  &-blue{
+    background: $blue;
+    color: #fff;
+    
+    &:hover{
+      background: darken($blue, 10%);
+      color: #fff;
+    }
+  }
+
+  &-lightblue{
+    background: $lightblue;
+    color: $blue;
+    
+    &:hover{
+      background: darken($lightblue, 10%);
+      color: $blue;
+    }
+  }
+}

@@ -1,0 +1,136 @@
+@import '/src/assets/sass/vars.scss';
+
+.page-home{
+
+  &__screen-1{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 748px;
+    
+    @media (max-width: $xlg) {
+      height: 660px;
+    }
+
+    @media (max-width: $lg) {
+      height: 600px;
+    }
+
+    @media (max-width: $sm) {
+      height: 500px;
+      max-height: 100vh;
+    }
+
+    &::before{
+      content: '';
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 9, 31, .3);
+    }
+
+    &__content{
+      position: relative;
+      z-index: 10;
+    }
+
+    &__title{
+      margin: 0;
+      color: $lightblue;
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 1.25;
+          
+      @media (max-width: $xlg) {
+        font-size: 50px;
+      }
+
+      @media (max-width: $lg) {
+        font-size: 44px;
+      }
+
+      @media (max-width: $sm) {
+        font-size: 30px;
+      }
+    }
+
+    &__subtitle{
+      font-size: 40px;
+      line-height: 1.25;
+      color: $lightblue;
+
+      @media (max-width: $xlg) {
+        font-size: 36px;
+      }
+
+      @media (max-width: $lg) {
+        font-size: 32px;
+      }
+
+      @media (max-width: $sm) {
+        font-size: 24px;
+      }
+    }
+
+    &__button{
+      position: relative;
+      display: block;
+      margin-top: 80px;
+      font-size: 1em;
+      font-weight: 500;
+      color: #fff;
+      padding-left: 2.5em;
+
+      @keyframes sec1Button {
+        0%{
+          transform: translateY(-40%);
+        }
+        50%{
+          transform: translateY(-60%);
+        }
+        100%{
+          transform: translateY(-40%);
+        }
+      }
+
+      &::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 2em;
+        height: 2em;
+        background: url(../assets/images/chevron-down-white.svg) no-repeat center center;
+        background-size: contain;
+        transition: transform .2s ease;
+        animation: sec1Button 2s ease infinite;
+      }
+
+      &:hover{
+        color: #fff;
+
+        &::before{
+          transform: translateY(-40%);
+        }
+      }
+
+      
+      @media (max-width: $xlg) {
+        margin-top: 70px;
+      }
+
+      @media (max-width: $lg) {
+        margin-top: 60px;
+      }
+
+      @media (max-width: $sm) {
+        margin-top: 40px;
+      }
+    }
+  }
+}

@@ -1,22 +1,36 @@
 @import "../../../../assets/sass/vars.scss";
 
-.sectionWhom {
+.section-whom {
+
   &__items{
     display: flex;
     flex-direction: row;
     max-width: 1440px;
-    margin: 0 auto;
+    margin: 40px auto 0;
+
+    @media (max-width: $lg) {
+      margin: 30px auto 0;
+    }
+
+    @media (max-width: $sm) {
+      flex-direction: column;
+    }
   }
 
   &__item{
     width: 50%;
+    color: $grey;
+
+    
+    @media (max-width: $sm) {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
     &-grey{
       background: $grey;
-
-      & .sectionWhom__item_title{
-        color: #fff;
-      }
+      color: #fff;
     }
 
     &_head{
@@ -24,17 +38,36 @@
       display: flex;
       flex-direction: row;
       align-items: center;
+      column-gap: 20px;
+
+      @media (max-width: $xlg) {
+        padding: 30px;
+      }
+
+      @media (max-width: $sm) {
+        padding: 20px;
+      }
+    }
+
+    &_icon{
+      
+      @media (max-width: $sm) {
+        width: 60px;
+      }
     }
 
     &_title{
       font-weight: 500;
-      color: $grey;
     }
 
     &_picture{
       position: relative;
       height: 440px;
       overflow: hidden;
+
+      @media (max-width: $sm) {
+        height: 280px;
+      }
     }
 
     &_img{

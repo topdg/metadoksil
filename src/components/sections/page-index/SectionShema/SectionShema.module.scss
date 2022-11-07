@@ -1,0 +1,389 @@
+@import '/src/assets/sass/vars.scss';
+
+.section-shema{
+  
+  &__text{
+    text-align: center;
+    margin-top: 60px;
+
+    & span{
+      color: $blue;
+    }
+    
+    @media (max-width: $md) {
+      margin-top: 40px;
+    }
+  }
+
+  &__container{
+    width: 100%;
+
+    @media (max-width: $sm) {
+      width: 100%;
+      overflow-x: auto;
+    }
+  }
+  &__shema{
+    position: relative;
+    margin: 80px auto;
+    max-width: 1243px;
+    height: 890px;
+    
+    @media (max-width: $xlg) {
+      height: 600px;
+      margin: 70px auto;
+    }
+    
+    @media (max-width: $md) {
+      width: 100%;
+      height: 480px;
+      margin: 60px auto;
+    }
+    @media (max-width: $sm) {
+      width: 510px;
+      height: 440px;
+    }
+
+    &_title{
+      position: absolute;
+      top: 0;
+      left: 35%;
+      font-family: 'Source Sans Pro', sans-serif, Arial;
+      font-size: 45px;
+      font-weight: 700;
+      line-height: 1.27;
+      color: #fff;
+    
+      @media (max-width: $xlg) {
+        font-size: 40px;
+      }
+    
+      @media (max-width: $lg) {
+        font-size: 36px;
+      }
+    
+      @media (max-width: $sm) {
+        font-size: 30px;
+      }
+
+      @media (max-width: $md) {
+        left: 27%;
+      }
+
+      &::before{
+        content: '';
+        position: absolute;
+        right: calc(100% + 30px);
+        top: 20px; 
+        width: 145px;
+        height: 174px;
+        display: block;
+        background: url(../../../../assets/images/shema_title__arrow-left.svg) no-repeat center center;
+        background-size: contain;
+
+        @media (max-width: $xlg) {
+          right: calc(100% + 30px);
+          top: 12px;
+          width: 100px;
+          height: 130px;
+        }
+
+        @media (max-width: $md) {
+          right: 100%;
+          top: 12px;
+          width: 70px;
+          height: 93px;
+        }
+      }
+
+      &::after{
+        content: '';
+        position: absolute;
+        left: calc(100% + 30px);
+        top: 20px; 
+        width: 145px;
+        height: 174px;
+        display: block;
+        background: url(../../../../assets/images/shema_title__arrow-right.svg) no-repeat center center;
+        background-size: contain;
+
+        @media (max-width: $xlg) {
+          left: calc(100% + 30px);
+          top: 12px;
+          width: 100px;
+          height: 130px;
+        }
+
+        @media (max-width: $xlg) {
+          left: 100%;
+          top: 12px;
+          width: 70px;
+          height: 93px;
+        }
+      }
+    }
+  }
+
+  &__item{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    row-gap: 20px;
+    column-gap: 15px;
+    font-weight: 600;
+
+    @media (max-width: $md) {
+      row-gap: 12px;
+      column-gap: 8px;
+    }
+
+    @media (max-width: $sm) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+
+    &::before{
+      content: '';
+      position: absolute;
+    }
+
+    &_picture{
+      width: 84px;
+      height: 84px;
+
+      @media (max-width: $xlg) {
+        width: 60px;
+        height: 60px;
+      }
+
+      @media (max-width: $md) {
+        width: 40px;
+        height: 40px;
+      }
+
+      & img{
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+
+    &_text{
+      width: calc(100% - 84px);
+
+      @media (max-width: $sm) {
+        width: 100%;
+      }
+
+      & span{
+        display: block;
+        color: $blue;
+      }
+    }
+
+    &:nth-child(2),
+    &:nth-child(3){
+      flex-direction: column;
+      text-align: center;
+      padding-left: 8em;
+
+      @media (max-width: $xlg) {
+        padding-left: 6em;
+      }
+      
+      @media (max-width: $md) {
+        padding-left: 3em;
+      }
+      
+      @media (max-width: $sm) {
+        align-items: center;
+      }
+
+      & .section-shema__item_picture{
+        height: 104px;
+        width: auto;
+
+        @media (max-width: $md) {
+          height: 60px;
+        }
+      }
+
+      & .section-shema__item_text{
+        width: 100%;
+      }
+
+
+      &::before{
+        position: absolute;
+        top: 30%;
+        left: 0;
+        width: 8em;
+        height: 12em;
+        background: url(../../../../assets/images/shema_item-1__arrow-next.svg) no-repeat center center;
+        background-size: contain;
+
+        @media (max-width: $xlg) {
+          width: 5em;
+          height: 8em;
+        }
+        @media (max-width: $md) {
+          width: 4em;
+          height: 6.5em;      
+        }
+      }
+    }
+
+    &:nth-child(2){
+      top: 27%;
+      left: 2%;
+
+      @media (max-width: $md) {
+        top: 25%;
+      }
+    }
+
+    &:nth-child(3){
+      left: 48%;
+      top: 27%;
+
+      @media (max-width: $md) {
+        top: 25%;
+      }
+    }
+
+    &:nth-child(4){
+      top: 64%;
+      left: 0%;
+
+      @media (max-width: $xlg) {
+        top: 60%;
+      }
+      
+      &::before{
+        top: 50%;
+        left: calc(100% + 30px);
+        width: 11em;
+        height: 6em;
+        transform: translateY(-50%);
+        background: url(../../../../assets/images/shema_item-3__arrow-next.svg) no-repeat center center;
+        background-size: contain;
+
+        @media (max-width: $xlg) {
+          width: 9em;
+          height: 3em;
+        }
+        @media (max-width: $md) {
+          width: 5em;
+          height: 2em;
+          left: 100%;
+        }
+        @media (max-width: $sm) {
+          top: 40px;
+          width: 7em;
+          height: 3em;
+          background-size: contain;
+        }
+      }
+    }
+
+    &:nth-child(5){
+      top: 64%;
+      left: 41%;
+      max-width: 330px;
+
+      @media (max-width: $xlg) {
+        max-width: 330px;
+      }
+      @media (max-width: $md) {
+        top: 60%;
+        max-width: 40%;
+        left: 32%;
+      }
+      @media (max-width: $sm) {
+        left: 44%;
+        max-width: 130px;
+      }
+      
+      &::before{
+        top: 50%;
+        left: calc(82% + 13px);
+        width: 11em;
+        height: 3.5em;
+        transform: translateY(-50%);
+        background: url(../../../../assets/images/shema_item-4__arrow-next.svg) no-repeat center center;
+        background-size: contain;
+
+        @media (max-width: $xlg) {
+          left: calc(70% + 13px);
+          width: 6em;
+          height: 3em;
+        }
+        @media (max-width: $md) {
+          width: 4em;
+          height: 2em;
+        }
+        @media (max-width: $md) {
+          top: 40px;
+          width: 3em;
+          height: 3em;
+        }
+      }
+    }
+
+    &:nth-child(6){
+      top: 64%;
+      right: 0%;
+      max-width: 235px;
+      
+      @media (max-width: $md) {
+        top: 60%;
+        width: 200px;
+      }
+      
+      @media (max-width: $md) {
+        top: 60%;
+        width: 120px;
+      }
+      
+      &::before{
+        top: calc(100% + 11px);
+        left: 30%;
+        width: 3em;
+        height: 6em;
+        background: url(../../../../assets/images/shema_item-5__arrow-next.svg) no-repeat center center;
+        background-size: contain;
+
+        @media (max-width: $xlg) {
+          height: 4.5em;
+        }
+        @media (max-width: $md) {
+          top: 100%;
+          width: 2em;
+          height: 4em;
+        }
+
+        @media (max-width: $sm) {
+          left: 10%;
+        }
+      }
+    }
+
+    &:nth-child(7){
+      top: 90%;
+      right: 0%;
+      width: 18%;
+
+      @media (max-width: $md) {
+        top: 80%;
+        width: 200px;
+      }
+
+      @media (max-width: $sm) {
+        flex-direction: row;
+        top: 97%;
+        width: 120px;
+      }
+    }
+  }
+}

@@ -1,26 +1,14 @@
 import { graphql, useStaticQuery } from "gatsby"
 import React, { FC } from "react"
+import { useSiteOptionsQuery } from "../../hooks/useSiteOptionsQuery"
 import { Container } from "../../utils/components/Container/Container"
 import { cls } from "../../utils/utils"
 import * as styles from "./Footer.module.scss"
 
 export const Footer : FC = () => {
-   const { wpPage } = useStaticQuery(graphql`
-    query MyQ {
-      wpPage(databaseId: {eq: 39}) {
-        title
-        slug
-        mainPage {
-          screen1 {
-            subtitle
-            button
-            title
-            video
-          }
-        }
-      }
-    }
-  `);
+   const { wp } = useSiteOptionsQuery();
+
+  const { siteOptions } = wp?.mainOptions?.acf__mainSiteSettings ?? {};
 
   return (
     <footer id="footer" className={ styles.footer }>
@@ -64,9 +52,9 @@ export const Footer : FC = () => {
               <div className={ styles.footer__title }>Контакты</div>
               <div className={ styles.footer__nav }>
                 <ul className={ styles.footer__items }>
-                  <li className={ styles.footer__item }>&copy; 2021 CSC Ltd Russia</li>
-                  <li className={ styles.footer__item }>ООО «Си Эс Си ЛТД»</li>
-                  <li className={ styles.footer__item }><a href="tel:+74993116771" className={ styles.footer__link }>+7 499 311-67-71</a></li>
+                  <li className={ styles.footer__item }>{ siteOptions.copyright }</li>
+                  <li className={ styles.footer__item }>{ siteOptions.company }</li>
+                  <li className={ styles.footer__item }><a href={'tel:+' + siteOptions.phone.split(' ').join('').split('-').join('') } className={ styles.footer__link }>{ siteOptions.phone }</a></li>
                   <li className={ styles.footer__item }><a href="mailto:office@cscpharma.ru" className={ styles.footer__link }>office@cscpharma.ru</a></li>
                 </ul>
               </div>

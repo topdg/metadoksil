@@ -2,8 +2,20 @@
   font-family: 'Source Sans Pro', sans-serif, Arial;
   font-size: 45px;
   font-weight: 700;
-  line-height: 57px;
+  line-height: 1.27;
   color: $black;
+
+  @media (max-width: $xlg) {
+    font-size: 40px;
+  }
+
+  @media (max-width: $lg) {
+    font-size: 36px;
+  }
+
+  @media (max-width: $sm) {
+    font-size: 30px;
+  }
 
   &-blue{
     color: $blue;
@@ -11,5 +23,9 @@
 
   &-white{
     color: #fff;
+  }
+
+  &-center{
+    text-align: center;
   }
 }

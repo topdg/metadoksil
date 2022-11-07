@@ -1,0 +1,95 @@
+@import "../../../../assets/sass/vars.scss";
+
+.sectionUsage {
+
+  &__content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: $md) {
+      flex-direction: column;
+    }
+  }
+
+  &__items{
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    row-gap: 40px;
+
+    @media (max-width: $lg) {
+      margin-top: 40px;
+      row-gap: 30px;
+    }
+
+    @media (max-width: $sm) {
+      margin-top: 30px;
+      row-gap: 20px;
+    }
+  }
+
+  &__item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+
+    @media (max-width: $sm) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &_title{
+      width: 13em;
+      font-weight: 600;
+
+      @media (max-width: $md) {
+        width: auto;
+      }
+    }
+  
+    &_icons{
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      column-gap: 20px;
+
+      @media (max-width: $md) {
+        display: none;
+      }
+
+      &::before{
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 2px;
+        height: 80%;
+        background: $blue;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &__buttons{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+
+    @media (max-width: $lg) {
+      margin-top: 80px;
+    }
+
+    @media (max-width: $md) {
+      margin-top: 60px;
+    }
+
+    @media (max-width: $sm) {
+      margin-top: 50px;
+    }
+  }
+}

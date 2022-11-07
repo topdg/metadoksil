@@ -1,10 +1,10 @@
-import { GatsbyImageProps, IGatsbyImageData, ImageDataLike } from "gatsby-plugin-image"
+import { WpSvgFile } from "../../../../utils/types/types"
 
-export interface ISectionWhomItem {
+interface ISectionWhomItem {
   title: string
   type: string
-  icon: string
-  img: IGatsbyImageData
+  icon: WpSvgFile
+  img: Queries.WpMediaItem
 }
 export interface SectionWhomProps {
   title: string

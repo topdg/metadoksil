@@ -11,71 +11,123 @@ import { Literature } from "../components/Literature/Literature"
 import '../assets/sass/style.scss';
 import { Section2 } from "../components/sections/page-index/Section2/Section2"
 import { FAQ } from "../components/FAQ/FAQ"
+import videoBgMP4 from "../assets/video/sec1__bg.mp4"
 import videoBgWEBM from "../assets/video/sec1__bg.webm"
 import videoBgOGV from "../assets/video/sec1__bg.ogv"
 import { VideoBackground } from "../components/VideoBackground/VideoBackground"
 import { SectionWhom } from "../components/sections/page-index/SectionWhom/SectionWhom"
+import { cls } from "../utils/utils"
 
-export const query = graphql`
-  query {
-    wpPage(databaseId: {eq: 39}) {
-      id
-      title
-      slug
-      content
-      mainPage {
-        screen1 {
-          video
-          title
-          subtitle
-          button
-        }
-        screen2 {
-          icon {
-            sourceUrl
-          }
-          title
-        }
-        screenForWhom {
-          title
-          items {
-            title
-            type
-            img {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
-            }
-            icon {
-              sourceUrl
-              localFile {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
-            }
-          }
-        }
+import * as styles from './index.module.scss'
+import { SectionUsage } from "../components/sections/page-index/SectionUsage/SectionUsage"
+import { SectionShema } from "../components/sections/page-index/SectionShema/SectionShema"
+import { ButtonLink } from "../utils/components/ButtonLink/ButtonLink"
+
+export const query = graphql`{
+  wpPage(databaseId: {eq: 39}) {
+    id
+    title
+    slug
+    content
+    mainPage {
+      screen1 {
+        video
+        title
+        subtitle
+        button
       }
-      acf__literature {
-        literature {
-          title
-          list {
-            item
-          }
-        }
-      }
-      acf__faq {
+      screenUsage {
         title
         items {
-          answer
-          question
+          title
+          text
+          icon2 {
+            localFile {
+            	fields {
+              	staticPath
+            	}
+            }
+          }
+          icon1 {
+            localFile {
+              fields {
+                staticPath
+              }
+            }
+          }
+        }
+        img {
+          localFile {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+      screenHowWork {
+        title
+        text
+        shemaTitle
+        items {
+          title
+          icon {
+            localFile {
+              fields {
+                staticPath
+              }
+            }
+          }
+        }
+      }
+      screenForWhom {
+        title
+        items {
+          title
+          type
+          img {
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
+          icon {
+            localFile {
+              fields {
+                staticPath
+              }
+            }
+          }
+        }
+      }
+      screen2 {
+        title
+        icon {
+          localFile {
+            fields {
+              staticPath
+            }
+          }
         }
       }
     }
+    acf__literature {
+      literature {
+        title
+        list {
+          item
+        }
+      }
+    }
+    acf__faq {
+      title
+      items {
+        answer
+        question
+      }
+    }
   }
+}
 `;
 
  
@@ -84,42 +136,40 @@ const IndexPage = ({ data } : any) => {
     wpPage: { title, content, id, mainPage, acf__literature, acf__faq },
   } = data
 
+  console.log(mainPage.screenUsage)
+
   return (
   <Layout header="white">
-    <Section className="section-blue page-home__screen-1">
-      <video controls autoPlay width="1000px" height="1000px">
-        <source src={videoBgWEBM} type="type/webm" />
-        <source src={videoBgOGV} type="type/ogg" />
-      </video>
-      <video controls autoPlay width="1000px" height="1000px">
-        <source src={'/sec1__bg.mp4'} type="type/mp4" />
-        <source src={'/sec1__bg.webm'} type="type/webm" />
-        <source src={'/sec1__bg.ogv'} type="type/ogg" />
-      </video>
+    <Section className={cls('section-blue', styles.pageHome__screen1)} >
+      <VideoBackground poster="" videos={[
+          {src: videoBgMP4, type: "video/mp4"},
+          {src: videoBgWEBM, type: "video/webm"},
+          {src: videoBgOGV, type: "video/ogg"},
+        ]}
+      />
       <Container>
-        <div className="page-home__screen-1__video"></div>
-        <div className="page-home__screen-1__content">
+        <div className={styles.pageHome__screen1__content}>
           {
             mainPage?.screen1?.title &&
-            <div className="page-home__screen-1__title" dangerouslySetInnerHTML={ {__html: mainPage.screen1.title }} /> 
+            <div className={styles.pageHome__screen1__title} dangerouslySetInnerHTML={ {__html: mainPage.screen1.title }} /> 
           }
           { 
             mainPage?.screen1?.subtitle &&
-            <div className="page-home__screen-1__subtitle" dangerouslySetInnerHTML={ {__html: mainPage.screen1.subtitle }} />
+            <div className={styles.pageHome__screen1__subtitle} dangerouslySetInnerHTML={ {__html: mainPage.screen1.subtitle }} />
           }
           { 
             mainPage?.screen1?.button &&
-            <Button 
-              className="" 
-              handlerClick={() => console.log(1)} 
-              aria-label=""
+            <a 
+              className={styles.pageHome__screen1__button}
+              href="#for-whom"
             >
               { mainPage.screen1.button }
-            </Button>
+            </a>
           }
         </div>
       </Container>
     </Section>
+
      {
       mainPage?.screen2 &&
       <Section2 items={mainPage.screen2}></Section2>
@@ -128,7 +178,14 @@ const IndexPage = ({ data } : any) => {
       mainPage?.screenForWhom &&
       <SectionWhom {...mainPage.screenForWhom} />
      }
+     {
+      mainPage?.screenHowWork &&
+      <SectionShema {...mainPage.screenHowWork} />
+     }
 
+    { mainPage?.screenUsage &&
+      <SectionUsage {...mainPage?.screenUsage} />
+     }
 
     {
       acf__faq &&

@@ -4,6 +4,7 @@
 @import './Container.scss';
 @import './Title.scss';
 @import './Button.scss';
+@import './ButtonLink.scss';
 
 html, body{
   padding: 0;
@@ -35,6 +36,7 @@ body{
 a {
   color: $blue;
   transition: color .2s ease;
+  scroll-behavior: smooth;
 
   &:hover{
     color: $black;
@@ -43,4 +45,9 @@ a {
 
 sup {
   color: $blue;
+}
+
+.page-home__screen-1{
+  position: relative;
+  min-height: 700px;
 }

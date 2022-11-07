@@ -1,9 +1,7 @@
-interface Section2Icon {
-  sourceUrl: string
-}
+import { WpSvgFile } from "../../../../utils/types/types"
 
 interface Section2Item {
-  icon: Section2Icon
+  icon: WpSvgFile
   title: string
 }
 
