@@ -15,4 +15,5 @@ jobs:
           API_HOST: ${{ secrets.METADOXIL_API_HOST }}
         with:
           access-token: ${{ secrets.ACCESS_TOKEN }}
+          deploy-branch: gh-pages
           
