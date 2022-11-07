@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 import React, { FC } from "react"
 import { useSiteOptionsQuery } from "../../hooks/useSiteOptionsQuery"
 import { Container } from "../../utils/components/Container/Container"
@@ -21,7 +21,7 @@ export const Footer : FC = () => {
                 <ul className={ styles.footer__items }>
                   <li className={ styles.footer__item }><a href="" className={ styles.footer__link }>О препарате</a></li>
                   <li className={ styles.footer__item }><a href="" className={ styles.footer__link }>Научные публикации</a></li>
-                  <li className={ styles.footer__item }><a href="" className={ styles.footer__link }>Инструкция, таблетки</a></li>
+                  <li className={ styles.footer__item }><Link to="/tabletki/" className={ styles.footer__link }>Инструкция, таблетки</Link></li>
                   <li className={ styles.footer__item }><a href="" className={ styles.footer__link }>Инструкция, раствор</a></li>
                   <li className={ styles.footer__item }><a href="" className={ styles.footer__link }>Где купить</a></li>
                 </ul>

@@ -8,7 +8,6 @@ import * as styles from './Section2.module.scss'
 
 export const Section2 : FC<Section2Props> = ( { items } ) => {
 
-  console.log(items);
   return (
     <Section>
       <Container>

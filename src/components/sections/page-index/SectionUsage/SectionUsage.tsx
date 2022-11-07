@@ -41,7 +41,7 @@ export const SectionUsage : FC<SectionUsageProps> = ({title, items, img}) => {
               )}
             </div>
             <div className={styles.sectionUsage__buttons}>
-              <ButtonLink href="#" className='buttonLink-blue'>инструкция</ButtonLink>
+              <ButtonLink href="/tabletki/" className='buttonLink-blue'>инструкция</ButtonLink>
               <ButtonLink href="#" className='buttonLink-lightblue'>где купить?</ButtonLink>
             </div>
           </div>

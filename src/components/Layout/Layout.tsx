@@ -8,7 +8,9 @@ import { Content } from "../../utils/components/Content/Content";
 import { Danger } from "../Danger/Danger";
 import { LayoutProps } from "./Layout.types";
 
-export const Layout: FC<LayoutProps> = ( { header, children } ) => {
+import '../../assets/sass/style.scss';
+
+export const Layout: FC<LayoutProps> = ( { header, pageClassName, children } ) => {
 
   const [activeMenu, setActiveMenu] = useState(false);
 
@@ -19,7 +21,7 @@ export const Layout: FC<LayoutProps> = ( { header, children } ) => {
       <Header type={header ? 'white' : 'default'} />
       <Hamburger active={ activeMenu } toggleMenu={ toggleMenu }  />
       <Menu active={ activeMenu } toggleMenu={ toggleMenu } />
-      <Content>
+      <Content className={pageClassName}>
         { children }
         <Danger />
       </Content>

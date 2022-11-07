@@ -52,7 +52,7 @@ exports.onCreateNode = ({ node, actions } : any) => {
       actions.createNodeField({
         name: 'staticPath',
         node,
-        value: path.split('./static/')[1],
+        value: path.split('./static')[1],
       })
     }
   }

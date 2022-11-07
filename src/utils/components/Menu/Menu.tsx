@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { MenuProps } from './Menu.types'
 import { cls } from '../../utils'
+import { Link } from 'gatsby';
 
 import * as styles from './Menu.module.scss';
 
@@ -13,7 +14,7 @@ export const Menu : FC<MenuProps> = ( {active, toggleMenu} ) => {
           <ul className={ styles.menu__group_list }>
             <li className={ styles.menu__group_item }><a href="#" className={ styles.menu__group_link }>О препарате</a></li>
             <li className={ styles.menu__group_item }><a href="#" className={ styles.menu__group_link }>Научные публикации</a></li>
-            <li className={ styles.menu__group_item }><a href="#" className={ styles.menu__group_link }>Инструкция, таблетки</a></li>
+            <li className={ styles.menu__group_item }><Link to="/tabletki/" className={ styles.menu__group_link }>Инструкция, таблетки</Link></li>
             <li className={ styles.menu__group_item }><a href="#" className={ styles.menu__group_link }>Инструкция, раствор</a></li>
             <li className={ styles.menu__group_item }><a href="#" className={ styles.menu__group_link }>Где купить</a></li>
           </ul>

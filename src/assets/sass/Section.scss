@@ -24,6 +24,10 @@
   &-grey{
     background: $grey;
     color: #fff;
+
+    & .title{
+      color: #fff;
+    }
   }
 
   &-pt0{

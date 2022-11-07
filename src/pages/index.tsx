@@ -2,10 +2,8 @@ import { graphql } from "gatsby"
 import * as React from "react"
 import type { HeadFC } from "gatsby"
 import { Layout } from "../components/Layout/Layout"
-import { Title } from "../utils/components/Title/Title"
 import { Section } from "../utils/components/Section/Section"
 import { Container } from "../utils/components/Container/Container"
-import { Button } from "../utils/components/Button/Button"
 import { Literature } from "../components/Literature/Literature"
 
 import '../assets/sass/style.scss';
@@ -21,7 +19,6 @@ import { cls } from "../utils/utils"
 import * as styles from './index.module.scss'
 import { SectionUsage } from "../components/sections/page-index/SectionUsage/SectionUsage"
 import { SectionShema } from "../components/sections/page-index/SectionShema/SectionShema"
-import { ButtonLink } from "../utils/components/ButtonLink/ButtonLink"
 
 export const query = graphql`{
   wpPage(databaseId: {eq: 39}) {
@@ -136,8 +133,6 @@ const IndexPage = ({ data } : any) => {
     wpPage: { title, content, id, mainPage, acf__literature, acf__faq },
   } = data
 
-  console.log(mainPage.screenUsage)
-
   return (
   <Layout header="white">
     <Section className={cls('section-blue', styles.pageHome__screen1)} >
@@ -213,6 +208,6 @@ const IndexPage = ({ data } : any) => {
 export const Head: HeadFC = () => {
   
   return (
-    <title>Home Page</title>
+    <title>Метадоксил - главная</title>
   )
 }
