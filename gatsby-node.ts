@@ -33,10 +33,10 @@ import type {CreateNodeArgs} from 'gatsby'
 // }
 
 exports.onCreateNode = ({ node, actions, pathPrefix = '' }: CreateNodeArgs) => {
-  const { createNode, createNodeField } = actions;
   if (node.internal.mediaType == "image/svg+xml" && node.extension == "svg") {
     const url = node.url as string;
     if (url) {
+      
       const fileName = url.split("/");
       const path = `./static/svg/${fileName[fileName.length - 1]}`;
       const request = https.get(url, function (response: any) {
@@ -49,7 +49,7 @@ exports.onCreateNode = ({ node, actions, pathPrefix = '' }: CreateNodeArgs) => {
           request.abort();
         });
       });
-
+      
       actions.createNodeField({
         name: "staticPath",
         node,
