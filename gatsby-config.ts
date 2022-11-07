@@ -52,7 +52,8 @@ const config: GatsbyConfig = {
       },
       __key: "images"
     }
-  ]
+  ],
+  pathPrefix: "/metadoksil"
 };
 
 export default config;
