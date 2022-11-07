@@ -1,12 +1,10 @@
 import type { GatsbyConfig } from "gatsby";
 import * as dotenv from 'dotenv'
 
-console.log(dotenv.config());
-
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Метадоксил`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://metadoxil.ru/`
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
