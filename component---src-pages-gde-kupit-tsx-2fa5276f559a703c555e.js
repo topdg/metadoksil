@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[649],{4562:function(e,n,t){t.r(n),t.d(n,{Head:function(){return r}});var u=t(7294),l=t(7185);n.default=function(){return u.createElement(l.A,null,u.createElement("div",null,"gde-kupit"))};var r=function(){return u.createElement("title",null,"Not found")}}}]);
+//# sourceMappingURL=component---src-pages-gde-kupit-tsx-2fa5276f559a703c555e.js.map
