@@ -17,13 +17,6 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: build
-          path: public
+          path: ~/src
       - name: Display structure of downloaded files
         run: ls -R
-      - name: Create SSH key
-        run: |
-          install -m 600 -D /dev/null ~/.ssh/id_rsa
-          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
-          echo "${{ secrets.SSH_HOST }}" > ~/.ssh/known_hosts
-      - name: Deploy with rsync
-        run: rsync -rav --delete public/index.html ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_TARGET_FOLDER }}
