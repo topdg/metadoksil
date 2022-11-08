@@ -33,4 +33,4 @@ jobs:
           ssh-keyscan -H "$hosts" > ~/.ssh/known_hosts
           
       - name: Deploy with rsync
-        run: rsync -rav --progress --delete public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_TARGET_FOLDER }}
+        run: rsync -rav --progress --delete public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_TARGET_FOLDER }}  | grep failed
