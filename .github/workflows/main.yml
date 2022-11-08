@@ -4,13 +4,14 @@ on:
   push:
     branches:
       - main
+  repository_dispatch:
+    
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
       - run: echo "API_HOST=${{ secrets.METADOXIL_API_HOST }}" >> .env
       
       - uses: enriikke/gatsby-gh-pages-action@v2
