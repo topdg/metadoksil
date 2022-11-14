@@ -26,6 +26,11 @@ export const query = graphql`{
     title
     slug
     content
+    seo {
+      metaDesc
+      metaKeywords
+      title
+    }
     mainPage {
       screen1 {
         video
@@ -130,7 +135,7 @@ export const query = graphql`{
  
 const IndexPage = ({ data } : any) => {
   const {
-    wpPage: { title, content, id, mainPage, acf__literature, acf__faq },
+    wpPage: { title, content, seo, id, mainPage, acf__literature, acf__faq },
   } = data
 
   return (
@@ -204,10 +209,16 @@ const IndexPage = ({ data } : any) => {
 }
 
  export default IndexPage
+ 
+ export const Head: HeadFC = ({data}) => {
+  const {
+    wpPage: { title, seo },
+  } = data
 
-export const Head: HeadFC = () => {
-  
   return (
-    <title>Метадоксил - главная</title>
+    <>
+      <title>{seo.title || title}</title>
+      <meta name="description" content={seo.metaDesc || ''} />
+    </>
   )
-}
+ } 
