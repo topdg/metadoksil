@@ -17,17 +17,20 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '16.x'
+          
       - name: Install npm dependencies
         run: npm install
+        
       - name: Run build task
         run: npm run build --prefix-paths
-
-      - name: Deploy to Server
-        uses: easingthemes/ssh-deploy@main
-        env:
-            SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
-            SOURCE: "public/"
-            REMOTE_HOST: ${{ secrets.SSH_HOST }}
-            REMOTE_USER: ${{ secrets.SSH_USER }}
-            TARGET: ${{ secrets.SSH_TARGET_FOLDER }}
-            EXCLUDE: "/dist/, /node_modules/"
+        
+      - name: Write SSH keys
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
+          host='${{ secrets.SSH_HOST }}'
+          hosts="$(dig +short "$host" | grep -v '\.$' | sed -z 's|\n|,|g')$host"
+          ssh-keyscan -H "$hosts" > ~/.ssh/known_hosts
+          
+      - name: Deploy with rsync
+        run: rsync --dry-run -avz --delete --exclude='cgi-bin/' public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_TARGET_FOLDER }}
