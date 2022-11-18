@@ -7,6 +7,7 @@ import { Container } from "../utils/components/Container/Container";
 import { Title } from "../utils/components/Title/Title";
 
 import * as styles from './instruction.module.scss'
+import { HeadContent } from "../components/HeadContent/HeadContent";
 
 export const query = graphql`{
   wpPage(databaseId: {eq: 141}) {
@@ -41,9 +42,14 @@ const TabletkiPage = ({ data } : any) => {
 
  export default TabletkiPage
 
-export const Head: HeadFC = () => {
+export const Head: HeadFC = ({data}) => {
+  const {
+    wpPage: { title, seo },
+  } = data
   
   return (
-    <title>Метадоксил - инструкция таблетки</title>
+    <>
+      <HeadContent title={title} />
+    </>
   )
 }

@@ -8,7 +8,7 @@ export const VideoBackground : FC<VideoBackgroundProps> = ( {poster, videos} ) =
     <div className={ styles.videoBackground}>
       <video className={ styles.videoBackground__video} loop autoPlay playsInline muted poster="/section-1__bg-video__poster.jpg" >
         {
-          videos.map(el => <source {...el} /> )
+          videos.map((el, i) => <source key={i} {...el} /> )
         }
       </video>
     </div>

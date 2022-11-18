@@ -20,7 +20,7 @@ export const SectionUsage : FC<SectionUsageProps> = ({title, items, img}) => {
             <Title><span dangerouslySetInnerHTML={{__html: title}}></span></Title>
             <div className={styles.sectionUsage__items} >
               {items.map((el, i) => 
-                <div className={styles.sectionUsage__item}>
+                <div key={i} className={styles.sectionUsage__item}>
                   <span className={styles.sectionUsage__item_title}>{ el.title }</span>
                   <div className={styles.sectionUsage__item_icons}>
                     {

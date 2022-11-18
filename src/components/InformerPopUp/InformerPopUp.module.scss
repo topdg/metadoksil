@@ -1,0 +1,74 @@
+@import "/src/assets/sass/vars.scss";
+
+.InformerPopUp{
+  
+  &__container{
+    max-width: 748px;
+
+    @media (max-width: $sm) {
+      max-width: calc(100% - 50px);
+    }
+  }
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+    
+    @media (max-width: $lg) {
+      row-gap: 50px;
+    }
+
+    @media (max-width: $md) {
+      row-gap: 40px;
+    }
+
+    @media (max-width: $sm) {
+      row-gap: 25px;
+      max-width: 100%;
+    }
+  }
+
+  &__title{
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.25em;
+  }
+
+  &__text{
+    line-height: 1.75;
+    text-align: center;
+  }
+
+  &__buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    @media (max-width: $sm) {
+      flex-direction: column;
+      row-gap: 15px;
+    }
+  }
+
+  &__button{
+    font-size: 1.25em;
+    font-weight: 600;
+
+    &-approve{
+      color: $blue;
+    }
+
+    &-cancel{
+      color: $grey;
+    }
+  }
+
+  &__danger{
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $lightgrey;
+    line-height: 1.11;
+  }
+}

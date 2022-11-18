@@ -14,7 +14,7 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-source-wordpress',
       options: {
-        "url": dotenv.config().parsed?.API_HOST
+        "url": dotenv.config().parsed?.API_HOST,
       }
     }, 
     "gatsby-plugin-image",
@@ -34,6 +34,17 @@ const config: GatsbyConfig = {
       options: {
         "icon": "src/assets/images/icon.png"
       }
+    },
+    {
+      resolve: `gatsby-plugin-yandex-metrika`,
+      options: {
+        trackingId: 91018412,
+        trackHash: true,
+        defer: false,
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+      },
     },
     {
       resolve: `gatsby-plugin-google-fonts`,

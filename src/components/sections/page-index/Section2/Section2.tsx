@@ -13,8 +13,8 @@ export const Section2 : FC<Section2Props> = ( { items } ) => {
       <Container>
         <div className={styles.section2__items}>
           {
-            items.map(el => 
-              <div className={ styles.section2__item }>
+            items.map((el, i) => 
+              <div key={i} className={ styles.section2__item }>
                 {
                   el.icon?.localFile?.fields?.staticPath &&
                   <div className={ styles.section2__item_picture } >

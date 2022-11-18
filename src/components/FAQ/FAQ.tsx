@@ -14,7 +14,7 @@ export const FAQ : FC<FAQProps> = ( {title, items} ) => {
       }
       <div className={ styles.faq__items }>
         {
-          items.map(el => <FAQItem {...el} />)
+          items.map((el, i) => <FAQItem key={i} {...el} />)
         }
       </div>
     </div>

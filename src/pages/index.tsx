@@ -5,8 +5,6 @@ import { Layout } from "../components/Layout/Layout"
 import { Section } from "../utils/components/Section/Section"
 import { Container } from "../utils/components/Container/Container"
 import { Literature } from "../components/Literature/Literature"
-
-import '../assets/sass/style.scss';
 import { Section2 } from "../components/sections/page-index/Section2/Section2"
 import { FAQ } from "../components/FAQ/FAQ"
 import videoBgMP4 from "../assets/video/sec1__bg.mp4"
@@ -15,10 +13,13 @@ import videoBgOGV from "../assets/video/sec1__bg.ogv"
 import { VideoBackground } from "../components/VideoBackground/VideoBackground"
 import { SectionWhom } from "../components/sections/page-index/SectionWhom/SectionWhom"
 import { cls } from "../utils/utils"
-
-import * as styles from './index.module.scss'
 import { SectionUsage } from "../components/sections/page-index/SectionUsage/SectionUsage"
 import { SectionShema } from "../components/sections/page-index/SectionShema/SectionShema"
+import { HeadContent } from "../components/HeadContent/HeadContent"
+
+import '../assets/sass/style.scss';
+
+import * as styles from './index.module.scss'
 
 export const query = graphql`{
   wpPage(databaseId: {eq: 39}) {
@@ -217,8 +218,7 @@ const IndexPage = ({ data } : any) => {
 
   return (
     <>
-      <title>{seo.title || title}</title>
-      <meta name="description" content={seo.metaDesc || ''} />
+      <HeadContent title={seo.title || title} description={seo.metaDesc || ''} />
     </>
   )
  } 

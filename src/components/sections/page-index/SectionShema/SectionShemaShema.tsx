@@ -10,8 +10,8 @@ export const SectionShemaShema : FC<SectionShemaShemaProps> = ({ title, items })
       <div className={styles.sectionShema__shema}>
         <div className={ styles.sectionShema__shema_title } dangerouslySetInnerHTML={ {__html: title} } />  
         {
-          items.map(el => 
-          <div className={styles.sectionShema__item}>
+          items.map((el, i) => 
+          <div key={i} className={styles.sectionShema__item}>
               {
                 el?.icon?.localFile?.fields?.staticPath &&
                 <div className={styles.sectionShema__item_picture} >

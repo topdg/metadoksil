@@ -17,7 +17,7 @@ export const SectionWhom : FC<SectionWhomProps> = ({title, items}) => {
       <div className={styles.sectionWhom__items} >
         {
         items.map((el, i) =>
-          <div className={cls(styles.sectionWhom__item, el.type == 'grey' && styles.sectionWhom__itemGrey)}>
+          <div key={i} className={cls(styles.sectionWhom__item, el.type == 'grey' && styles.sectionWhom__itemGrey)}>
             <div className={styles.sectionWhom__item_head}>
               {
                 el.icon?.localFile?.fields?.staticPath
