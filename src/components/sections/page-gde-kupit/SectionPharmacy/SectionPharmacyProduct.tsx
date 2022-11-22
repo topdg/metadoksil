@@ -25,7 +25,7 @@ export const SectionPharmacyProduct : FC<ISectionPharmacyProduct> = ( { items, t
           {
             items.map((item, i) => 
               <li key={i} className={ styles.sectionPharmacy__product_item }>
-              <a href={ item.link } className={ styles.sectionPharmacy__product_item__link }>
+              <a href={ item.link } target="blank" className={ styles.sectionPharmacy__product_item__link }>
                 {
                   item.img?.localFile?.childImageSharp?.gatsbyImageData &&
                   <GatsbyImage image={item.img.localFile.childImageSharp.gatsbyImageData} alt={'иконка аптеки'} />

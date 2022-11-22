@@ -32,13 +32,13 @@
     
     @media (max-width: $xlg) {
       height: 600px;
-      margin: 70px auto;
+      margin: 70px auto 0;
     }
     
     @media (max-width: $md) {
       width: 100%;
       height: 480px;
-      margin: 60px auto;
+      margin: 60px auto 0;
     }
     @media (max-width: $sm) {
       width: 510px;
