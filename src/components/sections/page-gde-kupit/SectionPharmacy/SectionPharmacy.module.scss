@@ -1,0 +1,161 @@
+@import '/src/assets/sass/vars.scss';
+
+.section-pharmacy{
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+
+    @media (max-width: $lg) {
+      row-gap: 50px;
+    }
+
+    @media (max-width: $md) {
+      row-gap: 30px;
+    }
+  }
+  
+  &__subtitle{
+    max-width: 20em;
+    font-family: 'Source Sans Pro', 'Ubuntu', sans-serif;
+    font-size: 2em;
+
+    @media (max-width: $lg) {
+      font-size: 1.5em;
+    }
+  }
+
+  &__products{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media (max-width: $sm) {
+      flex-direction: column;
+      row-gap: 30px;
+    }
+  }
+
+  &__product{
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: $xlg) {
+      width: 320px;
+    }
+
+    @media (max-width: $lg) {
+      width: 300px;
+    }
+
+    @media (max-width: $md) {
+      width: 230px;
+    }
+
+    @media (max-width: $sm) {
+      width: 100%;
+      max-width: 400px;
+    }
+    
+    &:last-child{
+      & .section-pharmacy__product_title{
+        padding-bottom: 0;
+      }
+    }
+
+    &-active{
+      & .section-pharmacy__product_list{
+        display: block;
+      }
+      & .section-pharmacy__product_title{
+        &::after{
+          transform: translateY(-50%) rotate(180deg);
+        }
+      }
+    }
+
+    &_title{
+      padding-bottom: .4em;
+      color: $blue;
+      font-size: 45px;
+      font-weight: 700;
+      line-height: 1.27;
+      text-align: center;
+    
+      @media (max-width: $xlg) {
+        font-size: 40px;
+      }
+    
+      @media (max-width: $lg) {
+        font-size: 25px;
+      }
+
+      @media (max-width: $sm) {
+        position: relative;
+        text-align: left;
+
+        &::after{
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%) rotate(0deg);
+          width: 20px;
+          height: 20px;
+          background: #ccc;
+          transition: .3s ease transform;
+        }
+      }
+
+      & small{
+        margin-top: -.4em;
+        display: block;
+        font-size: .49em;
+        font-weight: 500;
+
+        @media (max-width: $lg) {
+          font-size: .65em;
+        }
+
+        @media (max-width: $sm) {
+          display: inline-block;
+        }
+      }
+    }
+
+    &_list{
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+
+      @media (max-width: $lg) {
+        padding: 10px;
+      }
+
+      @media (max-width: $sm) {
+        padding: 10px 0px;
+        display: none;
+      }
+    }
+  
+    &_item{
+      display: block;
+      border-bottom: 1px solid $blue;
+      
+      &__link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: .3s opacity ease;
+
+        &:hover{
+          opacity: .8;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,21 @@
+@import '/src/assets/sass/vars.scss';
+
+.gde-kupit{
+  &__content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 80px;
+
+    @media (max-width: $lg) {
+      row-gap: 70px;
+    }
+
+    @media (max-width: $md) {
+      row-gap: 60px;
+    }
+
+    @media (max-width: $sm) {
+      row-gap: 40px;
+    }
+  }
+}

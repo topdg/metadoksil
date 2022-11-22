@@ -49,7 +49,10 @@ sup {
   font-size: .55em;
 }
 
-.page-home__screen-1{
-  position: relative;
-  min-height: 700px;
+.page-pt{
+  padding-top: 92px;
+
+  @media (max-width: $md) {
+    padding-top: 64px;
+  }
 }

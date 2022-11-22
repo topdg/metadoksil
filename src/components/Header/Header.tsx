@@ -1,10 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import { Container } from "../../utils/components/Container/Container";
-import { Hamburger } from "../../utils/components/Hamburger/Hamburger";
 import { HeaderMenu } from "../HeaderMenu/HeaderMenu";
 import { useMenuQuery } from "../../hooks/useMenuQuery";
-import { graphql, Link, useStaticQuery } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 import { Logo } from "../Logo/Logo";
 import { cls } from "../../utils/utils";
 import { HeaderProps } from "./Header.types";

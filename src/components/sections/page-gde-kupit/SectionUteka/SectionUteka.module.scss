@@ -1,0 +1,108 @@
+@import '/src/assets/sass/vars.scss';
+
+.section-uteka{
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+
+    @media (max-width: $lg) {
+      row-gap: 50px;
+    }
+
+    @media (max-width: $md) {
+      row-gap: 30px;
+    }
+
+    @media (max-width: $sm) {
+      row-gap: 20px;
+    }
+  }
+
+  &__head{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    @media (max-width: $lg) {
+      row-gap: 16px;
+    }
+
+    @media (max-width: $md) {
+      row-gap: 12px;
+    }
+
+    @media (max-width: $sm) {
+      row-gap: 10px;
+    }
+  }
+
+  &__subtitle{
+    max-width: 28em;
+    font-family: 'Source Sans Pro', 'Ubuntu', sans-serif;
+    font-weight: 600;
+    font-size: 1.25em;
+  }
+
+  &__products{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media (max-width: $sm) {
+      flex-direction: column;
+      row-gap: 16px;
+    }
+  }
+
+  &__product{
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    row-gap: 40px;
+    background: $lightblue;
+    padding: 60px 30px 30px;
+
+    @media (max-width: $xlg) {
+      width: 320px;
+    }
+
+    @media (max-width: $lg) {
+      width: 300px;
+      padding: 40px 20px 20px;
+    }
+
+    @media (max-width: $md) {
+      width: 230px;
+      padding: 40px 16px 16px;
+      row-gap: 20px;
+      align-items: center;
+      text-align: center;
+    }
+
+    @media (max-width: $sm) {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    &_picture{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    &_title{
+      font-size: .75em;
+    }
+
+    &_button{
+      width: 100%;
+      font-size: 1em;
+      font-weight: 500;
+    }
+  }
+}

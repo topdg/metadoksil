@@ -4,7 +4,7 @@ import { Title } from '../../../../utils/components/Title/Title'
 import { SectionWhomProps } from './SectionWhom.types'
 import { Section } from '../../../../utils/components/Section/Section'
 import * as styles from './SectionWhom.module.scss'
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { cls } from '../../../../utils/utils'
 
 export const SectionWhom : FC<SectionWhomProps> = ({title, items}) => {

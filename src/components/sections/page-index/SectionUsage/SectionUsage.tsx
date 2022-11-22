@@ -13,7 +13,7 @@ export const SectionUsage : FC<SectionUsageProps> = ({title, items, img}) => {
 
 
   return (
-    <Section className="section-pb0">
+    <Section className="section">
       <Container>
         <div className={styles.sectionUsage__content} >
           <div className={styles.sectionUsage__main} >
@@ -42,7 +42,7 @@ export const SectionUsage : FC<SectionUsageProps> = ({title, items, img}) => {
             </div>
             <div className={styles.sectionUsage__buttons}>
               <ButtonLink href="/tabletki/" className='buttonLink-blue'>инструкция</ButtonLink>
-              <ButtonLink href="#" className='buttonLink-lightblue'>где купить?</ButtonLink>
+              <ButtonLink href="/gde-kupit/" className='buttonLink-lightblue'>где купить?</ButtonLink>
             </div>
           </div>
           {
