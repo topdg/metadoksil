@@ -102,9 +102,9 @@
           right: 0;
           top: 50%;
           transform: translateY(-50%) rotate(0deg);
-          width: 20px;
-          height: 20px;
-          background: #ccc;
+          width: 24px;
+          height: 24px;
+          background: url(../../../../assets/images/chevron-up.svg);
           transition: .3s ease transform;
         }
       }

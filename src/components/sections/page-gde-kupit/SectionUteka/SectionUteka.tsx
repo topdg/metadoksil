@@ -39,7 +39,7 @@ export const SectionUteka : FC<SectionUtekaProps> = ( {title, subtitle, products
                   el.title &&
                   <div className={ styles.sectionUteka__product_title }>{ el.title }</div>
                 }
-                <ButtonLink href="https://uteka.ru" attributes={ { "data-product-id":"213120" } } className={cls('buttonLink-blue', styles.sectionUteka__product_button)}>Выбрать</ButtonLink>
+                <ButtonLink href="https://uteka.ru" attributes={ { "data-product-id": el.utekaId } } className={cls('buttonLink-blue', styles.sectionUteka__product_button)}>Выбрать</ButtonLink>
               </div>
             )
           }

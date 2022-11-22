@@ -19,11 +19,11 @@ export const Footer : FC = () => {
               <div className={ styles.footer__title }>Метадоксил</div>
               <div className={ styles.footer__nav }>
                 <ul className={ styles.footer__items }>
-                  <li className={ styles.footer__item }><a href="" className={ styles.footer__link }>О препарате</a></li>
-                  <li className={ styles.footer__item }><a href="" className={ styles.footer__link }>Научные публикации</a></li>
+                  <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>О препарате</Link></li>
+                  <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>Научные публикации</Link></li>
                   <li className={ styles.footer__item }><Link to="/tabletki/" className={ styles.footer__link }>Инструкция, таблетки</Link></li>
-                  <li className={ styles.footer__item }><a href="" className={ styles.footer__link }>Инструкция, раствор</a></li>
-                  <li className={ styles.footer__item }><a href="" className={ styles.footer__link }>Где купить</a></li>
+                  <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>Инструкция, раствор</Link></li>
+                  <li className={ styles.footer__item }><Link to="/gde-kupit/" className={ styles.footer__link }>Где купить</Link></li>
                 </ul>
               </div>
             </div>
@@ -31,10 +31,10 @@ export const Footer : FC = () => {
               <div className={ styles.footer__title }>Показания</div>
               <div className={ styles.footer__nav }>
                 <ul className={ styles.footer__items }>
-                  <li className={ styles.footer__item }><a href="" className={ styles.footer__link }>При абстинентном синдроме</a></li>
-                  <li className={ styles.footer__item }><a href="" className={ styles.footer__link }>При острой интоксикации организма алкоголем</a></li>
-                  <li className={ styles.footer__item }><a href="" className={ styles.footer__link }>При пагубном потреблении алкоголя</a></li>
-                  <li className={ styles.footer__item }><a href="" className={ styles.footer__link }>При амнестическом синдроме</a></li>
+                  <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>При абстинентном синдроме</Link></li>
+                  <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>При острой интоксикации организма алкоголем</Link></li>
+                  <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>При пагубном потреблении алкоголя</Link></li>
+                  <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>При амнестическом синдроме</Link></li>
                 </ul>
               </div>
             </div>
@@ -42,9 +42,9 @@ export const Footer : FC = () => {
               <div className={ styles.footer__title }>О похмелье</div>
               <div className={ styles.footer__nav }>
                 <ul className={ styles.footer__items }>
-                  <li className={ styles.footer__item }><a href="" className={ styles.footer__link }>Алкогольный калькулятор</a></li>
-                  <li className={ styles.footer__item }><a href="" className={ styles.footer__link }>Как избавиться от похмелья</a></li>
-                  <li className={ styles.footer__item }><a href="" className={ styles.footer__link }>Что такое алкогольная интоксикация</a></li>
+                  <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>Алкогольный калькулятор</Link></li>
+                  <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>Как избавиться от похмелья</Link></li>
+                  <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>Что такое алкогольная интоксикация</Link></li>
                 </ul>
               </div>
             </div>

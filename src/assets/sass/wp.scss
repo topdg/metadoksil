@@ -1,0 +1,10 @@
+.wp-block-columns{
+  display: flex;
+  flex-direction: row;
+  column-gap: 40px;
+
+  @media (max-width: $md) {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+}

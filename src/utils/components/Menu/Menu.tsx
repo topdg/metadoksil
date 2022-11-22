@@ -12,28 +12,28 @@ export const Menu : FC<MenuProps> = ( {active, toggleMenu} ) => {
         <div className={ styles.menu__group }>
           <div className={ styles.menu__group_title }>Метадоксил</div>
           <ul className={ styles.menu__group_list }>
-            <li className={ styles.menu__group_item }><a href="#" className={ styles.menu__group_link }>О препарате</a></li>
-            <li className={ styles.menu__group_item }><a href="#" className={ styles.menu__group_link }>Научные публикации</a></li>
+            <li className={ styles.menu__group_item }><Link to="/in-develop/" className={ styles.menu__group_link }>О препарате</Link></li>
+            <li className={ styles.menu__group_item }><Link to="/in-develop/" className={ styles.menu__group_link }>Научные публикации</Link></li>
             <li className={ styles.menu__group_item }><Link to="/tabletki/" className={ styles.menu__group_link }>Инструкция, таблетки</Link></li>
-            <li className={ styles.menu__group_item }><a href="#" className={ styles.menu__group_link }>Инструкция, раствор</a></li>
-            <li className={ styles.menu__group_item }><a href="#" className={ styles.menu__group_link }>Где купить</a></li>
+            <li className={ styles.menu__group_item }><Link to="/in-develop/" className={ styles.menu__group_link }>Инструкция, раствор</Link></li>
+            <li className={ styles.menu__group_item }><Link to="/gde-kupit/" className={ styles.menu__group_link }>Где купить</Link></li>
           </ul>
         </div>
         <div className={ styles.menu__group }>
           <div className={ styles.menu__group_title }>Показания</div>
           <ul className={ styles.menu__group_list }>
-            <li className={ styles.menu__group_item }><a href="#" className={ styles.menu__group_link }>При абстинентном синдроме</a></li>
-            <li className={ styles.menu__group_item }><a href="#" className={ styles.menu__group_link }>При острой интоксикации организма алкоголем</a></li>
-            <li className={ styles.menu__group_item }><a href="#" className={ styles.menu__group_link }>При пагубном потреблении алкоголя</a></li>
-            <li className={ styles.menu__group_item }><a href="#" className={ styles.menu__group_link }>При амнестическом синдроме</a></li>
+            <li className={ styles.menu__group_item }><Link to="/in-develop/" className={ styles.menu__group_link }>При абстинентном синдроме</Link></li>
+            <li className={ styles.menu__group_item }><Link to="/in-develop/" className={ styles.menu__group_link }>При острой интоксикации организма алкоголем</Link></li>
+            <li className={ styles.menu__group_item }><Link to="/in-develop/" className={ styles.menu__group_link }>При пагубном потреблении алкоголя</Link></li>
+            <li className={ styles.menu__group_item }><Link to="/in-develop/" className={ styles.menu__group_link }>При амнестическом синдроме</Link></li>
           </ul>
         </div>
         <div className={ styles.menu__group }>
           <div className={ styles.menu__group_title }>О похмелье</div>
           <ul className={ styles.menu__group_list }>
-            <li className={ styles.menu__group_item }><a href="#" className={ styles.menu__group_link }>Алкогольный калькулятор</a></li>
-            <li className={ styles.menu__group_item }><a href="#" className={ styles.menu__group_link }>Как избавиться от похмелья</a></li>
-            <li className={ styles.menu__group_item }><a href="#" className={ styles.menu__group_link }>Что такое алкогольная интоксикация</a></li>
+            <li className={ styles.menu__group_item }><Link to="/in-develop/" className={ styles.menu__group_link }>Алкогольный калькулятор</Link></li>
+            <li className={ styles.menu__group_item }><Link to="/in-develop/" className={ styles.menu__group_link }>Как избавиться от похмелья</Link></li>
+            <li className={ styles.menu__group_item }><Link to="/in-develop/" className={ styles.menu__group_link }>Что такое алкогольная интоксикация</Link></li>
           </ul>
         </div>
       </div>

@@ -22,7 +22,9 @@ const config: GatsbyConfig = {
       resolve: "gatsby-plugin-sharp",
       options: {
         defaults: {
-          quality: 95,
+          placeholder: `blurred`,
+          backgroundColor: `transparent`,
+          quality: 100,
         }
       }
     }, 

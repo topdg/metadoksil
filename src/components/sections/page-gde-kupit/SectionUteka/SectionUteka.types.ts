@@ -1,4 +1,5 @@
 interface SectionUtekaItem {
+  utekaId: number
   title: string
   img: Queries.WpMediaItem
 }

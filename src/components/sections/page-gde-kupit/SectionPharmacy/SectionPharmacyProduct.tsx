@@ -28,7 +28,7 @@ export const SectionPharmacyProduct : FC<ISectionPharmacyProduct> = ( { items, t
               <a href={ item.link } target="blank" className={ styles.sectionPharmacy__product_item__link }>
                 {
                   item.img?.localFile?.childImageSharp?.gatsbyImageData &&
-                  <GatsbyImage image={item.img.localFile.childImageSharp.gatsbyImageData} alt={'иконка аптеки'} />
+                  <GatsbyImage image={item.img.localFile.childImageSharp.gatsbyImageData} quality={100} alt={'иконка аптеки'} />
                 }
               </a>
             </li>

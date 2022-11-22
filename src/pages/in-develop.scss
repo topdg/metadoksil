@@ -1,0 +1,44 @@
+@import '/src/assets/sass/vars.scss';
+
+.in_develop{
+
+  &__row{
+    align-items: center;
+    margin-top: 60px;
+
+    @media (max-width: $md) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  & .paragraph-1{
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  & p:nth-child(2){
+    margin-bottom: 80px;
+
+    @media (max-width: $lg) {
+      margin-bottom: 60px;
+    }
+
+    @media (max-width: $md) {
+      margin-bottom: 35px;
+    }
+  }
+
+  & .buttonLink{
+    margin-top: 80px;
+    max-width: 22em;
+    color: #fff;
+
+    @media (max-width: $lg) {
+      margin-bottom: 60px;
+    }
+
+    @media (max-width: $md) {
+      margin-bottom: 35px;
+    }
+  }
+}
