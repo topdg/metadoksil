@@ -71,8 +71,7 @@
       max-width: 260px;
 
       & .danger__close_icon{
-        left: initial;
-        right: 10px;
+        left: calc(100% - 40px);
         background: $lightgrey;
       }
 
