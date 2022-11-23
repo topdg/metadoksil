@@ -3,9 +3,9 @@
 .InformerPopUp{
   
   &__container{
-    max-width: 748px;
+    max-width: 939px;
 
-    @media (max-width: $sm) {
+    @media (max-width: $md) {
       max-width: calc(100% - 50px);
     }
   }
@@ -29,6 +29,45 @@
     }
   }
 
+  &__row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    @media (max-width: $xs) {
+      flex-direction: column-reverse;
+      row-gap: 10px;
+    }
+  }
+
+  &__col{
+    &-leftside{
+      width: 66%;
+      display: flex;
+      flex-direction: column;
+      row-gap: 46px;
+
+      @media (max-width: $md) {
+        row-gap: 25px;
+      }
+
+      @media (max-width: $xs) {
+        width: 100%;
+      }
+    }
+    &-rightside{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 33%;
+
+      @media (max-width: $xs) {
+        width: 60%;
+      }
+    }
+  }
+
   &__title{
     text-align: center;
     font-weight: 600;
@@ -43,7 +82,7 @@
   &__buttons{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    column-gap: 40px;
 
     @media (max-width: $sm) {
       flex-direction: column;
@@ -54,13 +93,10 @@
   &__button{
     font-size: 1.25em;
     font-weight: 600;
+    padding: 15px;
 
-    &-approve{
-      color: $blue;
-    }
-
-    &-cancel{
-      color: $grey;
+    @media (max-width: $sm) {
+      padding: 10px;
     }
   }
 

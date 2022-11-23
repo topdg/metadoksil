@@ -1,10 +1,10 @@
-import { StaticImage } from 'gatsby-plugin-image'
 import React, { FC } from 'react'
 import { Container } from '../../../../utils/components/Container/Container'
 import { Section } from '../../../../utils/components/Section/Section'
 import { Section2Props } from './Section2.types'
 
 import * as styles from './Section2.module.scss'
+import { cleanText } from '../../../../utils/utils'
 
 export const Section2 : FC<Section2Props> = ( { items } ) => {
 
@@ -18,7 +18,7 @@ export const Section2 : FC<Section2Props> = ( { items } ) => {
                 {
                   el.icon?.localFile?.fields?.staticPath &&
                   <div className={ styles.section2__item_picture } >
-                    <img src={ el.icon?.localFile?.fields?.staticPath } className={ styles.section2__item_img } alt={ el.title } />
+                    <img src={ el.icon?.localFile?.fields?.staticPath } className={ styles.section2__item_img } alt={ cleanText(el.title) } />
                   </div>
                 }
                 <span>{ el.icon.sourceUrl }</span>

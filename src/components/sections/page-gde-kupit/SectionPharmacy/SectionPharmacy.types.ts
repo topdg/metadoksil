@@ -1,6 +1,8 @@
+import { WpSvgFile } from "../../../../utils/types/types"
+
 interface SectionPharmacyItem {
   link: string
-  img: Queries.WpMediaItem
+  img: WpSvgFile
 }
 export interface ISectionPharmacyProduct {
   title: string

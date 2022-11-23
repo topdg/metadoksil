@@ -2,11 +2,8 @@ import { graphql } from "gatsby"
 import * as React from "react"
 import type { HeadFC } from "gatsby"
 import { Layout } from "../components/Layout/Layout"
-import { Section } from "../utils/components/Section/Section";
-import { Container } from "../utils/components/Container/Container";
-import { Title } from "../utils/components/Title/Title";
 
-import * as styles from './instruction.module.scss'
+import './instruction.scss'
 import { HeadContent } from "../components/HeadContent/HeadContent";
 
 export const query = graphql`{
@@ -30,7 +27,7 @@ export const query = graphql`{
  
 const TabletkiPage = ({ data } : any) => {
   const {
-    wpPage: { title, content, id, acf__literature },
+    wpPage: { content},
   } = data
 
   return (

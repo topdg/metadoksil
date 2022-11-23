@@ -8,6 +8,7 @@ import * as styles from './SectionUteka.module.scss'
 import { cls } from '../../../../utils/utils'
 import { Uteka } from '../../../Uteka/Uteka'
 import { ButtonLink } from '../../../../utils/components/ButtonLink/ButtonLink'
+import { Script } from 'gatsby'
 
 export const SectionUteka : FC<SectionUtekaProps> = ( {title, subtitle, productsmain} ) => {
 

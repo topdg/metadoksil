@@ -18,7 +18,7 @@ const pageInDevelop = ({ data }) => {
   } = data;
 
   return (
-    <Layout pageClassName='page-pt'>
+    <Layout>
         <div className='in_develop' dangerouslySetInnerHTML={{ __html: content }} />
     </Layout>
   )

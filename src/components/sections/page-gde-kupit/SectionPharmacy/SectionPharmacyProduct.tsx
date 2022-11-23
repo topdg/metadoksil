@@ -1,6 +1,5 @@
 import React, { FC, useState } from 'react'
 import { ISectionPharmacyProduct } from './SectionPharmacy.types'
-import { GatsbyImage } from 'gatsby-plugin-image'
 import { cls } from '../../../../utils/utils'
 
 import * as styles from './SectionPharmacy.module.scss'
@@ -27,8 +26,10 @@ export const SectionPharmacyProduct : FC<ISectionPharmacyProduct> = ( { items, t
               <li key={i} className={ styles.sectionPharmacy__product_item }>
               <a href={ item.link } target="blank" className={ styles.sectionPharmacy__product_item__link }>
                 {
-                  item.img?.localFile?.childImageSharp?.gatsbyImageData &&
-                  <GatsbyImage image={item.img.localFile.childImageSharp.gatsbyImageData} quality={100} alt={'иконка аптеки'} />
+                  item.img?.localFile?.fields?.staticPath &&
+                  <div className={ styles.sectionPharmacy__product_item__picture } >
+                    <img src={ item.img?.localFile?.fields?.staticPath } className={ styles.sectionPharmacy__product_item__icon } alt={'иконка аптеки'} />
+                  </div>
                 }
               </a>
             </li>

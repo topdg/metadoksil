@@ -5,7 +5,7 @@ import { SectionUsageProps } from './SectionUsage.types'
 import * as styles from './SectionUsage.module.scss'
 import { Section } from '../../../../utils/components/Section/Section'
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
-import { cls } from '../../../../utils/utils'
+import { cleanText, cls } from '../../../../utils/utils'
 import { ButtonLink } from '../../../../utils/components/ButtonLink/ButtonLink'
 
 export const SectionUsage : FC<SectionUsageProps> = ({title, items, img}) => {
@@ -48,7 +48,7 @@ export const SectionUsage : FC<SectionUsageProps> = ({title, items, img}) => {
           {
             image &&
             <div className={styles.sectionUsage__picture} >
-              <GatsbyImage image={image} alt={title} />
+              <GatsbyImage image={image} alt={cleanText(title)} />
             </div>
           }
         </div>

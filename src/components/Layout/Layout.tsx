@@ -10,11 +10,13 @@ import { LayoutProps } from "./Layout.types";
 
 import '../../assets/sass/style.scss';
 import { InformerPopUp } from "../InformerPopUp/InformerPopUp";
+import { cls } from "../../utils/utils";
 
 export const Layout: FC<LayoutProps> = ( { header, pageClassName, children } ) => {
 
   
   const [activeMenu, setActiveMenu] = useState(false);
+  const [activeDanger, setActiveDanger] = useState(true);
   
   const toggleMenu = () => setActiveMenu(prev => !prev);
 
@@ -23,9 +25,12 @@ export const Layout: FC<LayoutProps> = ( { header, pageClassName, children } ) =
       <Header type={header ? 'white' : 'default'} />
       <Hamburger active={ activeMenu } toggleMenu={ toggleMenu }  />
       <Menu active={ activeMenu } toggleMenu={ toggleMenu } />
-      <Content className={pageClassName}>
+      <Content className={cls('page-pt', pageClassName)}>
         { children }
-        <Danger />
+        {
+          activeDanger &&
+          <Danger />
+        }
       </Content>
       <Footer />
       <InformerPopUp />

@@ -49,8 +49,8 @@ query {
           link
           img {
             localFile {
-              childImageSharp {
-                gatsbyImageData
+              fields {
+                staticPath
               }
             }
           }
@@ -67,7 +67,7 @@ const gdeKupitPage = ( { data } : any ) => {
   } = data
 
   return (
-    <Layout pageClassName="page-pt">
+    <Layout>
       <Breadcrumbs current={{title}} />
       <Section>
         <Container>

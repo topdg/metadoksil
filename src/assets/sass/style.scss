@@ -56,4 +56,12 @@ sup {
   @media (max-width: $md) {
     padding-top: 64px;
   }
+  
+  &.page-pt0{
+    padding-top: 0px;
+  
+    @media (max-width: $md) {
+      padding-top: 0px;
+    }
+  }
 }
