@@ -7,10 +7,10 @@ import { Button } from '../utils/components/Button/Button';
 import { Container } from '../utils/components/Container/Container';
 import { Section } from '../utils/components/Section/Section';
 import { Title } from '../utils/components/Title/Title';
+import { calculatorDrinkFieldGroup } from '../utils/types/types';
 import { cls } from '../utils/utils';
 
 import * as styles from './calculator.module.scss'
-import { calculatorDrinkFieldGroup } from './calculator.types';
 
 
 // Формула расчета концентрации алкоголя в крови (промилле):

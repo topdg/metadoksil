@@ -8,3 +8,8 @@ export interface ElementProps<Tag> extends PropsWithChildren {
 export interface WpSvgFile extends Queries.WpMediaItem {
   staticPath?: string
 }
+
+export interface calculatorDrinkFieldGroup {
+  percent: number
+  volume: number
+}
