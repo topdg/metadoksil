@@ -34,6 +34,7 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
+        "background_color": "#49C5EF",
         "icon": "src/assets/images/icon.png"
       }
     },
