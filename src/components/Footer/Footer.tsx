@@ -42,7 +42,7 @@ export const Footer : FC = () => {
               <div className={ styles.footer__title }>О похмелье</div>
               <div className={ styles.footer__nav }>
                 <ul className={ styles.footer__items }>
-                  <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>Алкогольный калькулятор</Link></li>
+                  <li className={ styles.footer__item }><Link to="/kalkulyator-alkogolya-v-krovi/" className={ styles.footer__link }>Алкогольный калькулятор</Link></li>
                   <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>Как избавиться от похмелья</Link></li>
                   <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>Что такое алкогольная интоксикация</Link></li>
                 </ul>
