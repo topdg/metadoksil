@@ -33,7 +33,7 @@ export const SectionUteka : FC<SectionUtekaProps> = ( {title, subtitle, products
                 {
                   el.img?.localFile?.childImageSharp?.gatsbyImageData &&
                   <div className={ styles.sectionUteka__product_picture }>
-                    <GatsbyImage image={el.img.localFile.childImageSharp.gatsbyImageData} alt={''} />
+                    <GatsbyImage image={el.img.localFile.childImageSharp.gatsbyImageData} objectFit='contain' className={ styles.sectionUteka__product_img } alt={''} />
                   </div>
                 }
                 {

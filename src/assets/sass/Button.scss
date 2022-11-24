@@ -5,4 +5,22 @@
   appearance: none;
   outline: none;
   cursor: pointer;
+
+  &-blue{
+    background: $blue;
+    color: #fff;
+
+    &:hover{
+      background: darken($color: $blue, $amount: 10%);
+    }
+  }
+
+  &-lightblue{
+    background: $lightblue;
+    color: $blue;
+
+    &:hover{
+      background: darken($color: $lightblue, $amount: 10%);
+    }
+  }
 }

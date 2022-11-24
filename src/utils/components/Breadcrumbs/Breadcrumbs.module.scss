@@ -12,7 +12,10 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    row-gap: 30px;
+
+    @media (max-width: $sm) {
+      row-gap: 10px;
+    }
   }
 
   &__item{
