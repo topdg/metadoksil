@@ -13,6 +13,11 @@
     @media (max-width: $md) {
       margin-top: 40px;
     }
+
+    @media (max-width: $sm) {
+      text-align: left;
+      line-height: 1.75;
+    }
   }
 
   &__container{
@@ -41,9 +46,16 @@
       height: 480px;
       margin: 60px auto 0;
     }
+
     @media (max-width: $sm) {
       width: 510px;
       height: 440px;
+    }
+
+    @media (max-width: $xs) {
+      height: 914px;
+      width: 100%;
+      max-width: 360px;
     }
 
     &_title{
@@ -72,6 +84,14 @@
         left: 27%;
       }
 
+      @media (max-width: $xs) {
+        position: relative;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 45px;
+      }
+
       &::before{
         content: '';
         position: absolute;
@@ -96,6 +116,15 @@
           width: 70px;
           height: 93px;
         }
+
+        @media (max-width: $xs) {
+          background: url(../../../../assets/images/shema_arrow-small.svg) no-repeat center center;
+          background-size: contain;
+          width: 35px;
+          height: 78px;
+          right: 75%;
+          top: 50px;
+        }
       }
 
       &::after{
@@ -116,11 +145,20 @@
           height: 130px;
         }
 
-        @media (max-width: $xlg) {
+        @media (max-width: $md) {
           left: 100%;
           top: 12px;
           width: 70px;
           height: 93px;
+        }
+
+        @media (max-width: $xs) {
+          background: url(../../../../assets/images/shema_arrow-small.svg) no-repeat center center;
+          background-size: contain;
+          width: 35px;
+          height: 78px;
+          left: 75%;
+          top: 50px;
         }
       }
     }
@@ -145,6 +183,11 @@
       align-items: flex-start;
     }
 
+    @media (max-width: $xs) {
+      flex-direction: row;
+      align-items: center;
+    }
+
 
     &::before{
       content: '';
@@ -165,6 +208,11 @@
         height: 40px;
       }
 
+      @media (max-width: $xs) {
+        width: 60px;
+        height: 60px;
+      }
+
       & img{
         max-width: 100%;
         max-height: 100%;
@@ -176,6 +224,11 @@
 
       @media (max-width: $sm) {
         width: 100%;
+      }
+
+      @media (max-width: $xs) {
+        font-size: 20px;
+        width: calc(100% - 70px);
       }
 
       & span{
@@ -200,6 +253,10 @@
       
       @media (max-width: $sm) {
         align-items: center;
+      }
+      
+      @media (max-width: $xs) {
+        padding-left: 0;
       }
 
       & .section-shema__item_picture{
@@ -243,6 +300,24 @@
       @media (max-width: $md) {
         top: 25%;
       }
+
+      @media (max-width: $xs) {
+        top: 150px;
+        width: 40%;
+        left: 0;
+      }
+
+      &::before{
+        @media (max-width: $xs) {
+          background: url(../../../../assets/images/shema_arrow-small.svg) no-repeat center center;
+          background-size: contain;
+          width: 35px;
+          height: 78px;
+          left: 50%;
+          top: calc(100% + 5px);
+          transform: translateX(-50%);
+        }
+      }
     }
 
     &:nth-child(3){
@@ -252,6 +327,24 @@
       @media (max-width: $md) {
         top: 25%;
       }
+
+      @media (max-width: $xs) {
+        top: 150px;
+        width: 40%;
+        left: 60%;
+      }
+
+      &::before{
+        @media (max-width: $xs) {
+          background: url(../../../../assets/images/shema_arrow-big.svg) no-repeat center center;
+          background-size: contain;
+          width: 35px;
+          height: 251px;
+          left: 50%;
+          top: calc(100% + 5px);
+          transform: translateX(-50%);
+        }
+      }
     }
 
     &:nth-child(4){
@@ -260,6 +353,10 @@
 
       @media (max-width: $xlg) {
         top: 60%;
+      }
+
+      @media (max-width: $xs) {
+        top: 400px;
       }
       
       &::before{
@@ -275,16 +372,28 @@
           width: 9em;
           height: 3em;
         }
+        
         @media (max-width: $md) {
           width: 5em;
           height: 2em;
           left: 100%;
         }
+
         @media (max-width: $sm) {
           top: 40px;
           width: 7em;
           height: 3em;
           background-size: contain;
+        }
+        
+        @media (max-width: $xs) {
+          background: url(../../../../assets/images/shema_arrow-small.svg) no-repeat center center;
+          background-size: contain;
+          width: 35px;
+          height: 78px;
+          left: 50%;
+          top: calc(100% + 5px);
+          transform: translateX(-50%);
         }
       }
     }
@@ -297,14 +406,22 @@
       @media (max-width: $xlg) {
         max-width: 330px;
       }
+
       @media (max-width: $md) {
         top: 60%;
         max-width: 40%;
         left: 32%;
       }
+      
       @media (max-width: $sm) {
         left: 44%;
         max-width: 130px;
+      }
+
+      @media (max-width: $xs) {
+        left: 0;
+        top: 550px;
+        max-width: 100%;
       }
       
       &::before{
@@ -330,6 +447,15 @@
           width: 3em;
           height: 3em;
         }
+        @media (max-width: $xs) {
+          background: url(../../../../assets/images/shema_arrow-small.svg) no-repeat center center;
+          background-size: contain;
+          width: 35px;
+          height: 78px;
+          left: 50%;
+          top: calc(100% + 5px);
+          transform: translateX(-50%);
+        }
       }
     }
 
@@ -346,6 +472,13 @@
       @media (max-width: $md) {
         top: 60%;
         width: 120px;
+      }
+      
+      @media (max-width: $xs) {
+        top: 720px;
+        left: 50%;
+        transform: translate(-50%);
+        width: 200px;
       }
       
       &::before{
@@ -368,6 +501,16 @@
         @media (max-width: $sm) {
           left: 10%;
         }
+        
+        @media (max-width: $xs) {
+          background: url(../../../../assets/images/shema_arrow-small.svg) no-repeat center center;
+          background-size: contain;
+          width: 35px;
+          height: 78px;
+          left: 50%;
+          top: calc(100% + 5px);
+          transform: translateX(-50%);
+        }
       }
     }
 
@@ -385,6 +528,12 @@
         flex-direction: row;
         top: 97%;
         width: 120px;
+      }
+
+      @media (max-width: $xs) {
+        width: 200px;
+        top: 95%;
+        right: 5%;
       }
     }
   }

@@ -3,18 +3,14 @@
 .calculator{
   display: flex;
   flex-direction: column;
-  row-gap: 80px;
-
-  @media (max-width: $lg) {
-    row-gap: 70px;
-  }
+  row-gap: 50px;
 
   @media (max-width: $md) {
-    row-gap: 60px;
+    row-gap: 40px;
   }
 
   @media (max-width: $sm) {
-    row-gap: 40px;
+    row-gap: 30px;
   }
 
   & &__title{
@@ -26,32 +22,31 @@
     padding: 60px;
     display: flex;
     flex-direction: column;
-    row-gap: 80px;
+    row-gap: 50px;
     box-shadow: 2px 6px 14px rgba(22, 54, 90, 0.25);
     color: $black;
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 600;
-    font-size: 1.25em;
 
     @media (max-width: $lg) {
-      row-gap: 70px;
       padding: 50px;
     }
 
     @media (max-width: $md) {
-      row-gap: 60px;
+      row-gap: 40px;
       padding: 40px;
     }
 
     @media (max-width: $sm) {
-      row-gap: 40px;
+      row-gap: 30px;
       padding: 20px;
+      font-size: 1.15em;
     }
   }
 
   &__container{
-    max-width: 876px;
+    max-width: 800px;
   }
 
   &__row{
@@ -59,7 +54,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    column-gap: 80px;
+    column-gap: 60px;
     padding-right: 40px;
 
     @media (max-width: $lg) {
@@ -186,7 +181,11 @@
   &__drinks{
     display: flex;
     flex-direction: column;
-    row-gap: 40px;
+    row-gap: 20px;
+
+    @media (max-width: $sm) {
+      row-gap: 40px;
+    }
   }
 
   &__tags{
@@ -203,12 +202,12 @@
   &__tag{
     display: inline-block;
     padding: 10px 30px;
-    font-size: 20px;
     font-weight: 500;
+    font-size: 1em;
 
     @media (max-width: $sm) {
-      font-size: 18px;
       padding: 8px 15px;
+      font-size: 16px;
     }
   }
 
@@ -220,7 +219,7 @@
     max-width: 40%;
     padding: 10px 30px;
     background: $lightblue;
-    color: 1.25em;
+    font-size: .88em;
     font-weight: 600;
 
     @media (max-width: $sm) {
