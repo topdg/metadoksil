@@ -10,7 +10,7 @@ import { cls } from '../../../../utils/utils'
 export const SectionWhom : FC<SectionWhomProps> = ({title, items}) => {
 
   return (
-    <Section className="section-pb0" attributes={{id: "for-whom"}}>
+    <Section className="section-pb0 section-lightblue" attributes={{id: "for-whom"}}>
       <Container>
         <Title className="title-center">{ title }</Title>
       </Container>

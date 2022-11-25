@@ -10,7 +10,7 @@ export const PopUp : FC<PopUpProps> = ({ className, contentClassName, children, 
   return (
     <div className={ cls(styles.PopUp, className, active && styles.PopUpActive) }>
       <div className={ cls(styles.PopUp__content, contentClassName) }>
-        <Button className={ styles.PopUp__close } handlerClick={setActive}></Button>
+        <Button className={ styles.PopUp__close } handlerClick={setActive} attributes={{"aria-label": "закрыть модальное окно"}}></Button>
         { children }
       </div>
     </div>

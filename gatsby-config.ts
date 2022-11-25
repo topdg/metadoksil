@@ -34,8 +34,13 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        "background_color": "#49C5EF",
-        "icon": "src/assets/images/icon.png"
+        name: `Метадоксил`,
+        short_name: `Метадоксил`,
+        start_url: `/`,
+        background_color: "#FFFFFF",
+        theme_color: "#49C5EF",
+        display: `minimal-ui`,
+        icon: "src/assets/images/icon.png"
       }
     },
     {
