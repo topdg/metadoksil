@@ -19,8 +19,6 @@ export const Footer : FC = () => {
               <div className={ styles.footer__title }>Метадоксил</div>
               <div className={ styles.footer__nav }>
                 <ul className={ styles.footer__items }>
-                  <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>О препарате</Link></li>
-                  <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>Научные публикации</Link></li>
                   <li className={ styles.footer__item }><Link to="/tabletki/" className={ styles.footer__link }>Инструкция, таблетки</Link></li>
                   <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>Инструкция, раствор</Link></li>
                   <li className={ styles.footer__item }><Link to="/gde-kupit/" className={ styles.footer__link }>Где купить</Link></li>

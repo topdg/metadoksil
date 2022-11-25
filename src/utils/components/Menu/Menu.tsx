@@ -12,8 +12,6 @@ export const Menu : FC<MenuProps> = ( {active, toggleMenu} ) => {
         <div className={ styles.menu__group }>
           <div className={ styles.menu__group_title }>Метадоксил</div>
           <ul className={ styles.menu__group_list }>
-            <li className={ styles.menu__group_item }><Link to="/in-develop/" className={ styles.menu__group_link }>О препарате</Link></li>
-            <li className={ styles.menu__group_item }><Link to="/in-develop/" className={ styles.menu__group_link }>Научные публикации</Link></li>
             <li className={ styles.menu__group_item }><Link to="/tabletki/" className={ styles.menu__group_link }>Инструкция, таблетки</Link></li>
             <li className={ styles.menu__group_item }><Link to="/in-develop/" className={ styles.menu__group_link }>Инструкция, раствор</Link></li>
             <li className={ styles.menu__group_item }><Link to="/gde-kupit/" className={ styles.menu__group_link }>Где купить</Link></li>
