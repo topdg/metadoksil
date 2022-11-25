@@ -15,7 +15,7 @@ jobs:
           node-version: '18.x'
           
       - name: Add host secrets
-      - run: echo "API_HOST=${{ secrets.METADOXIL_API_HOST }}" >> .env
+        run: echo "API_HOST=${{ secrets.METADOXIL_API_HOST }}" >> .env
       
       - name: Install npm dependencies
         run: npm install
