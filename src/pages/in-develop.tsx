@@ -17,6 +17,7 @@ const pageInDevelop = ({ data }) => {
     wpPage: { title, content },
   } = data;
 
+  
   return (
     <Layout>
         <div className='in_develop' dangerouslySetInnerHTML={{ __html: content }} />
