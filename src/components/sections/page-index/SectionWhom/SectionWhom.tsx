@@ -9,13 +9,13 @@ import { cls } from '../../../../utils/utils'
 
 export const SectionWhom : FC<SectionWhomProps> = ({title, items}) => {
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(0);
   const [mousePressed, setMousePressed] = useState(false);
   const [translateX, setTranslateX] = useState(50);
 
   const setDefault = () => {
     setWindowWidth(window.innerWidth);
-    setTranslateX(windowWidth / 2);
+    setTranslateX(window.innerWidth / 2);
   }
 
   
