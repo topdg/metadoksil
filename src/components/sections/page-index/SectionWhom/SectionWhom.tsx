@@ -65,7 +65,7 @@ export const SectionWhom : FC<SectionWhomProps> = ({title, items}) => {
       <Container>
         <Title className="title-center">{ title }</Title>
       </Container>
-      <div 
+      <div
         className={styles.sectionWhom__items} 
         onMouseMove={handlerContainerMouseMove}
         onMouseUp={handlerDragEnd}
@@ -85,7 +85,7 @@ export const SectionWhom : FC<SectionWhomProps> = ({title, items}) => {
           <div 
             key={i} 
             className={cls(styles.sectionWhom__item, el.type == 'grey' && styles.sectionWhom__itemGrey)}
-            style={(el.type != 'grey') ? {transform: `translate(${translateX}px, -50%)`} : null}
+            style={(el.type != 'grey') ? {transform: `translate(${translateX}px, -50%)`} : {}}
           >
             <div className={styles.sectionWhom__item_head}>
               {
