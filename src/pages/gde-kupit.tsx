@@ -3,7 +3,7 @@ import React from 'react'
 import { HeadContent } from '../components/HeadContent/HeadContent';
 import { Layout } from '../components/Layout/Layout'
 import { SectionPharmacy } from '../components/sections/page-gde-kupit/SectionPharmacy/SectionPharmacy';
-import { SectionUteka } from '../components/sections/page-gde-kupit/SectionUteka/SectionUteka';
+import { SectionProducts } from '../components/sections/page-gde-kupit/SectionProducts/SectionProducts';
 import { Breadcrumbs } from '../utils/components/Breadcrumbs/Breadcrumbs';
 import { Container } from '../utils/components/Container/Container';
 import { Section } from '../utils/components/Section/Section';
@@ -34,7 +34,7 @@ query {
       subtitle2
       productsmain {
         title
-        utekaId
+        url
         img {
           localFile {
             childImageSharp {
@@ -72,7 +72,7 @@ const gdeKupitPage = ( { data } : any ) => {
       <Section>
         <Container>
           <div className={styles.gdeKupit__content}>
-            <SectionUteka title={ pageGdeKupit.title } subtitle={ pageGdeKupit.subtitle } productsmain={ pageGdeKupit.productsmain } />
+            <SectionProducts title={ pageGdeKupit.title } subtitle={ pageGdeKupit.subtitle } productsmain={ pageGdeKupit.productsmain } />
             <SectionPharmacy products={ pageGdeKupit.products } subtitle={ pageGdeKupit.subtitle2 } />
           </div>
         </Container>
