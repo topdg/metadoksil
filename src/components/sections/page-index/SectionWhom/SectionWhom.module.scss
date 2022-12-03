@@ -5,13 +5,14 @@
   &__items{
     display: flex;
     flex-direction: row;
-    margin: 40px auto 0;
+    margin: 60px auto 0;
 
     @media (max-width: $lg) {
-      margin: 30px auto 0;
+      margin: 40px auto 0;
     }
 
     @media (max-width: $sm) {
+      margin: 0 auto;
       flex-direction: column;
     }
   }
@@ -23,6 +24,23 @@
     justify-content: space-between;
     color: $grey;
     
+    &:first-child{
+      align-items: flex-end;
+
+      & .section-whom__item_head{
+        padding-left: 0;
+        padding-right: 60px;
+        
+        @media (max-width: $xlg) {
+          padding-left: 0;
+          padding-right: 40px;
+        }
+        
+        @media (max-width: $sm) {
+          padding-right: 20px;
+        }
+      }
+    }
     
     @media (max-width: $sm) {
       width: 100%;
@@ -30,23 +48,31 @@
       margin: 0 auto;
     }
 
-    &-grey{
-      background: $grey;
-      color: #fff;
-    }
-
     &_head{
-      padding: 70px;
+      padding-bottom: 60px;
+      padding-left: 60px;
       display: flex;
       flex-direction: row;
       align-items: center;
       column-gap: 20px;
+      width: calc($xlg / 2);
 
       @media (max-width: $xlg) {
-        padding: 30px;
+        padding-bottom: 40px;
+        padding-left: 40px;
+        width: calc($lg / 2);
+      }
+
+      @media (max-width: $lg) {
+        width: calc($md / 2);
+      }
+
+      @media (max-width: $md) {
+        width: calc($sm / 2);
       }
 
       @media (max-width: $sm) {
+        width: 100%;
         padding: 20px;
       }
     }
@@ -65,6 +91,7 @@
     &_picture{
       position: relative;
       height: 440px;
+      width: 100%;
       overflow: hidden;
 
       @media (max-width: $sm) {

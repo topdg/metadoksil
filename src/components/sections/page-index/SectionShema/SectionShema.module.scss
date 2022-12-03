@@ -2,21 +2,24 @@
 
 .section-shema{
   
+  &__subtitle{
+    margin-top: 20px;
+    font-family: 'Source Sans Pro', sans-serif, Arial;
+    font-weight: 600;
+    font-size: 25px;
+  }
+  
   &__text{
-    text-align: center;
-    margin-top: 60px;
+    margin-top: 40px;
+    max-width: 55em;
+    line-height: 1.75;
 
     & span{
       color: $blue;
     }
-    
-    @media (max-width: $md) {
-      margin-top: 40px;
-    }
 
     @media (max-width: $sm) {
       text-align: left;
-      line-height: 1.75;
     }
   }
 
@@ -63,8 +66,8 @@
       top: 0;
       left: 35%;
       font-family: 'Source Sans Pro', sans-serif, Arial;
-      font-size: 45px;
       font-weight: 700;
+      font-size: 45px;
       line-height: 1.27;
       color: #fff;
     
@@ -171,7 +174,6 @@
     align-items: center;
     row-gap: 20px;
     column-gap: 15px;
-    font-weight: 600;
 
     @media (max-width: $md) {
       row-gap: 12px;
@@ -221,6 +223,8 @@
 
     &_text{
       width: calc(100% - 84px);
+      font-family: 'Source Sans Pro', sans-serif, Arial;
+      font-weight: 600;
 
       @media (max-width: $sm) {
         width: 100%;

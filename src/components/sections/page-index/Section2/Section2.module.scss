@@ -2,9 +2,28 @@
 
 .section-2{
 
+  &__content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+
+    @media (max-width: $lg) {
+      row-gap: 50px;
+    }
+
+    @media (max-width: $md) {
+      row-gap: 40px;
+    }
+
+    @media (max-width: $sm) {
+      row-gap: 30px;
+    }
+  }
+
   &__items{
     display: flex;
     flex-direction: row;
+    column-gap: 40px;
 
     @media (max-width: $sm) {
       flex-wrap: wrap;
@@ -22,47 +41,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: 15px;
+    row-gap: 15px;
     width: 25%;
-    padding: 0 15px;
-
+    padding: 15px;
+    background: #fff;
+    box-shadow: 0px 4px 15px rgba(86, 120, 160, 0.14);
+    border-radius: 16px;
+    
     @media (max-width: $sm) {
       width: 50%;
     }
-
+    
     @media (max-width: $xs) {
       width: 100%;
       flex-direction: row;
-      min-height: 50px;
-    }
-
-    &::before{
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 50%;
-      height: calc(100% - 50px);
-      width: 2px;
-      transform: translate(50%, -50%);
-      background: $grey;
-
-      @media (max-width: $xs) {
-        display: none;
-      }
-    }
-
-    &:nth-child(2n) {
-      @media (max-width: $sm) {
-        &::before{
-          display: none;
-        }
-      }
-    }
-
-    &:last-child{
-      &::before{
-        display: none;
-      }
+      min-height: 80px;
+      column-gap: 15px;
     }
 
     &_title{
@@ -88,10 +82,11 @@
 
       @media (max-width: $xs) {
         position: absolute;
-        left: 0;
-        top: 0;
+        left: 15px;
+        top: 50%;
         width: 50px;
         height: 50px;
+        transform: translateY(-50%);
       }
     }
 

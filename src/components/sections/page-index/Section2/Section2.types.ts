@@ -6,5 +6,6 @@ interface Section2Item {
 }
 
 export interface Section2Props {
+  title: string
   items: Section2Item[]
 }

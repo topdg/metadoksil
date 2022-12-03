@@ -69,6 +69,7 @@ export const query = graphql`{
       }
       screenHowWork {
         title
+        subtitle
         text
         shemaTitle
         items {
@@ -86,7 +87,6 @@ export const query = graphql`{
         title
         items {
           title
-          type
           img {
             localFile {
               childImageSharp {
@@ -105,10 +105,13 @@ export const query = graphql`{
       }
       screen2 {
         title
-        icon {
-          localFile {
-            fields {
-              staticPath
+        items {
+          title
+          icon {
+            localFile {
+              fields {
+                staticPath
+              }
             }
           }
         }
@@ -173,7 +176,7 @@ const IndexPage = ({ data } : any) => {
 
      {
       mainPage?.screen2 &&
-      <Section2 items={mainPage.screen2}></Section2>
+      <Section2 {...mainPage.screen2}></Section2>
      }
      {
       mainPage?.screenForWhom &&

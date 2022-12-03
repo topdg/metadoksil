@@ -10,14 +10,17 @@ import { cls } from '../../../../utils/utils'
 export const SectionWhom : FC<SectionWhomProps> = ({title, items}) => {
 
   return (
-    <Section className="section-pb0 section-lightblue" attributes={{id: "for-whom"}}>
-      <Container>
-        <Title className="title-center">{ title }</Title>
-      </Container>
+    <Section className="section-pb0" attributes={{id: "for-whom"}}>
+      {
+        title &&
+        <Container>
+          <Title>{ title }</Title>
+        </Container>
+      }
       <div className={styles.sectionWhom__items} >
         {
         items.map((el, i) =>
-          <div key={i} className={cls(styles.sectionWhom__item, el.type == 'grey' && styles.sectionWhom__itemGrey)}>
+          <div key={i} className={cls(styles.sectionWhom__item)}>
             <div className={styles.sectionWhom__item_head}>
               {
                 el.icon?.localFile?.fields?.staticPath

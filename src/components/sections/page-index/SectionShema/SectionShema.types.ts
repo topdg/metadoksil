@@ -12,6 +12,7 @@ export interface SectionShemaShemaProps {
 
 export interface SectionShemaProps {
   title: string
+  subtitle: string
   text: string
   shemaTitle: string
   items: SectionShemaItem[]
