@@ -3,11 +3,11 @@
 .literature{
   display: flex;
   flex-direction: column;
-  row-gap: 30px;
+  row-gap: 10px;
 
   &__title{
-    font-size: 2em;
     font-weight: 500;
+    color: $grey;
   }
 
   &__list{
@@ -29,6 +29,7 @@
       font-size: .75em;
       line-height: 1.125;
       color: rgba(0, 2, 39, 0.4);
+      overflow-wrap: break-word;
     }
   }
 }

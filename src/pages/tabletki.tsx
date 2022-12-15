@@ -1,10 +1,10 @@
-import { graphql } from "gatsby"
-import * as React from "react"
+import React, { FC } from "react"
+import { graphql, PageProps } from "gatsby"
 import type { HeadFC } from "gatsby"
 import { Layout } from "../components/Layout/Layout"
+import { HeadContent } from "../components/HeadContent/HeadContent";
 
 import './instruction.scss'
-import { HeadContent } from "../components/HeadContent/HeadContent";
 
 export const query = graphql`{
   wpPage(databaseId: {eq: 141}) {
@@ -25,7 +25,7 @@ export const query = graphql`{
 `;
 
  
-const TabletkiPage = ({ data } : any) => {
+const TabletkiPage: FC<PageProps> = ({ data }) => {
   const {
     wpPage: { content},
   } = data

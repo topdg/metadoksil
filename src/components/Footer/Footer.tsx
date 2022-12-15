@@ -2,7 +2,7 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import React, { FC } from "react"
 import { useSiteOptionsQuery } from "../../hooks/useSiteOptionsQuery"
 import { Container } from "../../utils/components/Container/Container"
-import { cls } from "../../utils/utils"
+import { cls, ROUTER } from "../../utils/utils"
 import * as styles from "./Footer.module.scss"
 
 export const Footer : FC = () => {
@@ -41,6 +41,7 @@ export const Footer : FC = () => {
               <div className={ styles.footer__nav }>
                 <ul className={ styles.footer__items }>
                   <li className={ styles.footer__item }><Link to="/kalkulyator-alkogolya-v-krovi/" className={ styles.footer__link }>Алкогольный калькулятор</Link></li>
+                  <li className={ styles.footer__item }><Link to={ROUTER.blog} className={ styles.footer__link }>Полезные материалы</Link></li>
                   <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>Как избавиться от похмелья</Link></li>
                   <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>Что такое алкогольная интоксикация</Link></li>
                 </ul>

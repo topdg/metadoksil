@@ -8,7 +8,7 @@ import { Container } from '../utils/components/Container/Container';
 import { Section } from '../utils/components/Section/Section';
 import { Title } from '../utils/components/Title/Title';
 import { calculatorDrinkFieldGroup } from '../utils/types/types';
-import { cls } from '../utils/utils';
+import { cls, getMinName } from '../utils/utils';
 
 import * as styles from './calculator.module.scss'
 
@@ -208,7 +208,7 @@ const calculatorPage = ( { data } : any ) => {
                     &&
                     <div className={ styles.calculator__result }>
                       <div className={ styles.calculator__result_title }>{result} промилле</div>
-                      <div className={ styles.calculator__result_text }>Время выведения алкоголя из крови составит: {Math.floor(result*100/15)}&nbsp;ч&nbsp;{Math.round((Math.floor((result*100/15) * 100) % 100)*3/5)}&nbsp;мин </div>
+                      <div className={ styles.calculator__result_text }>Время выведения алкоголя из крови составит: {Math.floor(result*100/15)}&nbsp;ч&nbsp;{Math.round((Math.floor((result*100/15) * 100) % 100)*3/5)}&nbsp;{getMinName(Math.round((Math.floor((result*100/15) * 100) % 100)*3/5))} </div>
                     </div>
                   }
                   <Button className={cls('button-blue', styles.calculator__button)} handlerClick={updateResult}>посчитать</Button>

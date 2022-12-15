@@ -1,10 +1,7 @@
 import path from "path";
-import chunk from "lodash/chunk"
 import https from "https";
 import fs from "fs";
-import type {CreateNodeArgs} from 'gatsby'
-
-
+import type {CreateNodeArgs, CreatePagesArgs} from 'gatsby'
 
 
 exports.onCreateNode = ({ node, actions, pathPrefix = '' }: CreateNodeArgs) => {
@@ -34,6 +31,67 @@ exports.onCreateNode = ({ node, actions, pathPrefix = '' }: CreateNodeArgs) => {
   }
 };
 
+const blogQuery = `
+{
+  allWpPost {
+    edges {
+      post: node {
+        __typename
+        id
+        slug
+      }
+    }
+  }
+}`;
+
+exports.createPages = async ({
+	graphql,
+	actions,
+	reporter
+} : CreatePagesArgs) => {
+
+	const {
+		createPage
+	} = actions;
+	const blogResult = await graphql(blogQuery);
+
+	if (blogResult.errors) {
+		reporter.panicOnBuild('Error while running GraphQL query.');
+		return;
+	}
+
+	const posts = blogResult?.data?.allWpPost?.edges;
+
+  await createBlogPosts(posts, createPage);
+
+  await createArchive(createPage);
+
+
+}
+
+const createBlogPosts = async (posts, createPage) => {
+	const blogPostTemplate = path.resolve("./src/templates/posts/Post/Post.tsx");
+
+	posts.forEach(({post}, index) => {
+    createPage({
+			path: `/blog/${post.slug}`,
+			component: blogPostTemplate,
+			context: {
+        ...post
+      }
+		});
+	});
+}
+
+const createArchive = async (createPage) => {
+	const archiveTemplate = path.resolve("./src/templates/posts/Archive/Archive.tsx");
+
+  await createPage({
+    path: '/blog/',
+    component: archiveTemplate,
+  });
+}
+
 
 // /**
 //  * exports.createPages is a built-in Gatsby Node API.
@@ -58,9 +116,9 @@ exports.onCreateNode = ({ node, actions, pathPrefix = '' }: CreateNodeArgs) => {
 //   await createBlogPostArchive({ posts, gatsbyUtilities })
 // }
 
-// /**
-//  * This function creates all the individual blog pages in this site
-//  */
+/**
+ * This function creates all the individual blog pages in this site
+ */
 // async function createBlogPostArchive({ posts, gatsbyUtilities }) {
 //   const graphqlResult = await gatsbyUtilities.graphql(/* GraphQL */ `
 //     {
@@ -126,7 +184,7 @@ exports.onCreateNode = ({ node, actions, pathPrefix = '' }: CreateNodeArgs) => {
 //  * See https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/#createPages
 //  */
 // async function getNodes({ graphql, reporter }) {
-//   const graphqlResult = await graphql(`query WpPosts {
+//   const graphqlResult = await graphql(`{
 //   allWpPost(sort: {date: DESC}) {
 //     edges {
 //       post: node {
@@ -146,8 +204,10 @@ exports.onCreateNode = ({ node, actions, pathPrefix = '' }: CreateNodeArgs) => {
 //     return
 //   }
 
-//   return [
-//     ...graphqlResult.data.allWpPost.edges,
-//     ...graphqlResult.data.allWpPage.edges,
-//   ]
+//   console.log(graphqlResult);
+
+//   // return [
+//   //   ...graphqlResult.data.allWpPost.edges,
+//   //   ...graphqlResult.data.allWpPage.edges,
+//   // ]
 // }
