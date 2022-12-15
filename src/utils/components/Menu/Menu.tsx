@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { MenuProps } from './Menu.types'
-import { cls } from '../../utils'
+import { cls, ROUTER } from '../../utils'
 import { Link } from 'gatsby';
 
 import * as styles from './Menu.module.scss';
@@ -30,6 +30,7 @@ export const Menu : FC<MenuProps> = ( {active, toggleMenu} ) => {
           <div className={ styles.menu__group_title }>О похмелье</div>
           <ul className={ styles.menu__group_list }>
             <li className={ styles.menu__group_item }><Link to="/kalkulyator-alkogolya-v-krovi/" className={ styles.menu__group_link }>Алкогольный калькулятор</Link></li>
+            <li className={ styles.menu__group_item }><Link to={ROUTER.blog} className={ styles.menu__group_link }>Полезные материалы</Link></li>
             <li className={ styles.menu__group_item }><Link to="/in-develop/" className={ styles.menu__group_link }>Как избавиться от похмелья</Link></li>
             <li className={ styles.menu__group_item }><Link to="/in-develop/" className={ styles.menu__group_link }>Что такое алкогольная интоксикация</Link></li>
           </ul>
