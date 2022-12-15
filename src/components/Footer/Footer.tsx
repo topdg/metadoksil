@@ -20,7 +20,7 @@ export const Footer : FC = () => {
               <div className={ styles.footer__nav }>
                 <ul className={ styles.footer__items }>
                   <li className={ styles.footer__item }><Link to="/tabletki/" className={ styles.footer__link }>Инструкция, таблетки</Link></li>
-                  <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>Инструкция, раствор</Link></li>
+                  <li className={ styles.footer__item }><Link to="/rastvor/" className={ styles.footer__link }>Инструкция, раствор</Link></li>
                   <li className={ styles.footer__item }><Link to="/gde-kupit/" className={ styles.footer__link }>Где купить</Link></li>
                 </ul>
               </div>
@@ -29,10 +29,10 @@ export const Footer : FC = () => {
               <div className={ styles.footer__title }>Показания</div>
               <div className={ styles.footer__nav }>
                 <ul className={ styles.footer__items }>
-                  <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>При абстинентном синдроме</Link></li>
-                  <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>При острой интоксикации организма алкоголем</Link></li>
-                  <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>При пагубном потреблении алкоголя</Link></li>
-                  <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>При амнестическом синдроме</Link></li>
+                  <li className={ styles.footer__item }><Link to={ROUTER.inDev} className={ styles.footer__link }>При абстинентном синдроме</Link></li>
+                  <li className={ styles.footer__item }><Link to={ROUTER.inDev} className={ styles.footer__link }>При острой интоксикации организма алкоголем</Link></li>
+                  <li className={ styles.footer__item }><Link to={ROUTER.inDev} className={ styles.footer__link }>При пагубном потреблении алкоголя</Link></li>
+                  <li className={ styles.footer__item }><Link to={ROUTER.inDev} className={ styles.footer__link }>При амнестическом синдроме</Link></li>
                 </ul>
               </div>
             </div>
@@ -42,8 +42,8 @@ export const Footer : FC = () => {
                 <ul className={ styles.footer__items }>
                   <li className={ styles.footer__item }><Link to="/kalkulyator-alkogolya-v-krovi/" className={ styles.footer__link }>Алкогольный калькулятор</Link></li>
                   <li className={ styles.footer__item }><Link to={ROUTER.blog} className={ styles.footer__link }>Полезные материалы</Link></li>
-                  <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>Как избавиться от похмелья</Link></li>
-                  <li className={ styles.footer__item }><Link to="/in-develop/" className={ styles.footer__link }>Что такое алкогольная интоксикация</Link></li>
+                  <li className={ styles.footer__item }><Link to={`${ROUTER.blog}kak-izbavitsya-ot-pohmelya-doma-dokazannye-metody/`} className={ styles.footer__link }>Как избавиться от похмелья</Link></li>
+                  <li className={ styles.footer__item }><Link to={ROUTER.inDev} className={ styles.footer__link }>Что такое алкогольная интоксикация</Link></li>
                 </ul>
               </div>
             </div>

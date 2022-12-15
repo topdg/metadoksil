@@ -57,7 +57,7 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Ubuntu\:400,500`, `Source Sans Pro\:400,600,700`],
+        fonts: [`Ubuntu\:400,500,600`, `Source Sans Pro\:400,600,700`],
         display: `swap`,
       }
     },

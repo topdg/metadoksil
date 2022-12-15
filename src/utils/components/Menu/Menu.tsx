@@ -13,17 +13,17 @@ export const Menu : FC<MenuProps> = ( {active, toggleMenu} ) => {
           <div className={ styles.menu__group_title }>Метадоксил</div>
           <ul className={ styles.menu__group_list }>
             <li className={ styles.menu__group_item }><Link to="/tabletki/" className={ styles.menu__group_link }>Инструкция, таблетки</Link></li>
-            <li className={ styles.menu__group_item }><Link to="/in-develop/" className={ styles.menu__group_link }>Инструкция, раствор</Link></li>
+            <li className={ styles.menu__group_item }><Link to="/rastvor/" className={ styles.menu__group_link }>Инструкция, раствор</Link></li>
             <li className={ styles.menu__group_item }><Link to="/gde-kupit/" className={ styles.menu__group_link }>Где купить</Link></li>
           </ul>
         </div>
         <div className={ styles.menu__group }>
           <div className={ styles.menu__group_title }>Показания</div>
           <ul className={ styles.menu__group_list }>
-            <li className={ styles.menu__group_item }><Link to="/in-develop/" className={ styles.menu__group_link }>При абстинентном синдроме</Link></li>
-            <li className={ styles.menu__group_item }><Link to="/in-develop/" className={ styles.menu__group_link }>При острой интоксикации организма алкоголем</Link></li>
-            <li className={ styles.menu__group_item }><Link to="/in-develop/" className={ styles.menu__group_link }>При пагубном потреблении алкоголя</Link></li>
-            <li className={ styles.menu__group_item }><Link to="/in-develop/" className={ styles.menu__group_link }>При амнестическом синдроме</Link></li>
+            <li className={ styles.menu__group_item }><Link to={ROUTER.inDev} className={ styles.menu__group_link }>При абстинентном синдроме</Link></li>
+            <li className={ styles.menu__group_item }><Link to={ROUTER.inDev} className={ styles.menu__group_link }>При острой интоксикации организма алкоголем</Link></li>
+            <li className={ styles.menu__group_item }><Link to={ROUTER.inDev} className={ styles.menu__group_link }>При пагубном потреблении алкоголя</Link></li>
+            <li className={ styles.menu__group_item }><Link to={ROUTER.inDev} className={ styles.menu__group_link }>При амнестическом синдроме</Link></li>
           </ul>
         </div>
         <div className={ styles.menu__group }>
@@ -31,8 +31,8 @@ export const Menu : FC<MenuProps> = ( {active, toggleMenu} ) => {
           <ul className={ styles.menu__group_list }>
             <li className={ styles.menu__group_item }><Link to="/kalkulyator-alkogolya-v-krovi/" className={ styles.menu__group_link }>Алкогольный калькулятор</Link></li>
             <li className={ styles.menu__group_item }><Link to={ROUTER.blog} className={ styles.menu__group_link }>Полезные материалы</Link></li>
-            <li className={ styles.menu__group_item }><Link to="/in-develop/" className={ styles.menu__group_link }>Как избавиться от похмелья</Link></li>
-            <li className={ styles.menu__group_item }><Link to="/in-develop/" className={ styles.menu__group_link }>Что такое алкогольная интоксикация</Link></li>
+            <li className={ styles.menu__group_item }><Link to={`${ROUTER.blog}kak-izbavitsya-ot-pohmelya-doma-dokazannye-metody/`} className={ styles.menu__group_link }>Как избавиться от похмелья</Link></li>
+            <li className={ styles.menu__group_item }><Link to={ROUTER.inDev} className={ styles.menu__group_link }>Что такое алкогольная интоксикация</Link></li>
           </ul>
         </div>
       </div>

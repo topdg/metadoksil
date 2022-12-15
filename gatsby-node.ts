@@ -44,6 +44,19 @@ const blogQuery = `
   }
 }`;
 
+const instructionQuery = `
+{
+  allWpInstruction {
+    edges {
+      post: node {
+        __typename
+        id
+        slug
+      }
+    }
+  }
+}`;
+
 exports.createPages = async ({
 	graphql,
 	actions,
@@ -54,28 +67,29 @@ exports.createPages = async ({
 		createPage
 	} = actions;
 	const blogResult = await graphql(blogQuery);
+	const instructionResult = await graphql(instructionQuery);
 
-	if (blogResult.errors) {
+	if (blogResult.errors || instructionResult.errors) {
 		reporter.panicOnBuild('Error while running GraphQL query.');
 		return;
 	}
 
 	const posts = blogResult?.data?.allWpPost?.edges;
+	const instructions = instructionResult?.data?.allWpInstruction?.edges;
 
-  await createBlogPosts(posts, createPage);
+  await createBlogPosts(posts, createPage, {template: "./src/templates/posts/Post/Post.tsx", _path: "/blog/"});
+  await createBlogPosts(instructions, createPage, {template: "./src/templates/posts/Instruction/Instruction.tsx", _path: "/"});
 
   await createArchive(createPage);
 
 
 }
 
-const createBlogPosts = async (posts, createPage) => {
-	const blogPostTemplate = path.resolve("./src/templates/posts/Post/Post.tsx");
-
+const createBlogPosts = async (posts, createPage, {template, _path}) => {
 	posts.forEach(({post}, index) => {
     createPage({
-			path: `/blog/${post.slug}`,
-			component: blogPostTemplate,
+			path: `${_path + post.slug}/`,
+			component: path.resolve(template),
 			context: {
         ...post
       }
