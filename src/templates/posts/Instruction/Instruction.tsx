@@ -65,7 +65,7 @@ const InstructionPostTemplate : FC<PageProps> = ({ data: { post } }) => {
                 </div>
                 <div className={styles.instruction__rightside}>
                   {featuredImage?.image && (
-                    <GatsbyImage alt={post.title} image={featuredImage.image} />
+                    <GatsbyImage alt={post.title} className={styles.instruction__img} objectFit="contain" image={featuredImage.image} />
                   )}
                 </div>
               </div>

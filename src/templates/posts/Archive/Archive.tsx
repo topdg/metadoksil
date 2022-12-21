@@ -66,7 +66,7 @@ const Archive : FC<PageProps> = ({
 
 export const Head: HeadFC = ({data}) => {
 
-  return <HeadContent title="All posts" />
+  return <HeadContent title="Блог - Метадоксил" />
 }
 
 export default Archive

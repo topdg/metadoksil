@@ -70,7 +70,7 @@ const BlogPostTemplate : FC<PageProps> = ({ data: { post } }) => {
                     <nav className={styles.article__aside_nav}>
                       <ul className={styles.article__aside_list}>
                         {
-                          post?.postContent?.menu?.itemsOutside.map((el, i) => 
+                          post?.postContent?.menu?.itemsOutside?.map((el, i) => 
                             <li key={i} className={styles.article__aside_item}><a href={el.link} onClick={() => setShowAside(prev => false)} className={styles.article__aside_link}>{el.text}</a></li>
                           )
                         }
