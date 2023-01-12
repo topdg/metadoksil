@@ -29,7 +29,7 @@ export const Footer : FC = () => {
               <div className={ styles.footer__title }>Показания</div>
               <div className={ styles.footer__nav }>
                 <ul className={ styles.footer__items }>
-                  <li className={ styles.footer__item }><Link to={ROUTER.inDev} className={ styles.footer__link }>При абстинентном синдроме</Link></li>
+                  <li className={ styles.footer__item }><Link to={`${ROUTER.blog}/abstinentnyj-sindrom-pochemu-on-voznikaet/`} className={ styles.footer__link }>При абстинентном синдроме</Link></li>
                   <li className={ styles.footer__item }><Link to={ROUTER.inDev} className={ styles.footer__link }>При острой интоксикации организма алкоголем</Link></li>
                   <li className={ styles.footer__item }><Link to={ROUTER.inDev} className={ styles.footer__link }>При пагубном потреблении алкоголя</Link></li>
                   <li className={ styles.footer__item }><Link to={ROUTER.inDev} className={ styles.footer__link }>При амнестическом синдроме</Link></li>

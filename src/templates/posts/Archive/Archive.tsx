@@ -52,7 +52,7 @@ const Archive : FC<PageProps> = ({
                       }
                     </header>
                     <div itemProp="description" className={styles.archive__item_preview} dangerouslySetInnerHTML={{__html: post.excerpt}} />
-                    <ButtonLink href={ROUTER.blog + post.slug} attributes={{itemProp: "url"}} className={styles.archive__item_button}>Читать полностью</ButtonLink>
+                    <ButtonLink href={ROUTER.blog + post.slug + '/'} attributes={{itemProp: "url"}} className={styles.archive__item_button}>Читать полностью</ButtonLink>
                   </article>
                 </li>
               )}
