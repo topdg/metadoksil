@@ -4,6 +4,5 @@ interface VideoBackgroundVideo{
 }
 
 export interface VideoBackgroundProps {
-  poster: string
   videos: VideoBackgroundVideo[]
 }

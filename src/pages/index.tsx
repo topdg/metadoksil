@@ -145,7 +145,7 @@ const IndexPage = ({ data } : any) => {
   return (
   <Layout header="white" pageClassName="page-pt0">
     <Section className={cls('section-blue', styles.pageHome__screen1)} >
-      <VideoBackground poster="" videos={[
+      <VideoBackground videos={[
           {src: videoBgMP4, type: "video/mp4"},
           {src: videoBgWEBM, type: "video/webm"},
           {src: videoBgOGV, type: "video/ogg"},
