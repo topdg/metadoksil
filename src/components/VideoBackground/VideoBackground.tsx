@@ -8,7 +8,7 @@ export const VideoBackground : FC<VideoBackgroundProps> = ( {videos} ) => {
   return (
     <div className={ styles.videoBackground}>
       <div className={ styles.videoBackground__poster}>
-        <StaticImage src="../../assets/images/section-1__bg-video__poster.jpg" className={ styles.videoBackground__poster_img} alt="" />
+        <StaticImage src="../../assets/images/section-1__bg-video__poster.jpg" objectFit="cover" alt="" />
       </div>
       <video className={ styles.videoBackground__video} loop autoPlay playsInline muted >
         {
